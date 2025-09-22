@@ -3,153 +3,412 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Campaña • Proyectos y Progreso</title>
-  <meta name="description" content="Página de campaña con barra de progreso central y proyectos marcables." />
+  <title>Campaña — Proyectos y Progreso</title>
+  <meta name="description" content="Sitio oficial de la campaña: banner, logo, proyectos con progreso, galería e información." />
   <link rel="icon" href="data:," />
-  <link rel="stylesheet" href="campana.css">
-  <script src="campana.js"></script>
-
-  <!-- CSS se agregará en el siguiente paso -->
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
 </head>
 <body>
-  <!-- Encabezado / Hero -->
-  <header>
-    <nav aria-label="Principal">
-      <a href="#inicio" class="brand" aria-label="Inicio">Campaña XYZ</a>
-      <ul class="nav">
-        <li><a href="#progreso">Progreso</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#acerca">Acerca</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
+  <!-- Header fijo con logo y navegación -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Inicio">
+        <!-- Espacio para logo (reemplaza logo.png por tu archivo) -->
+        <img src="img/logo.png" alt="Logo de la campaña" width="40" height="40" class="brand-logo" />
+        <span class="brand-name">Campaña BQj</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menú</button>
+    <nav id="site-nav" class="site-nav" aria-label="Principal">
+      <a href="#presentacion">Presentación</a>
+      <a href="#progreso">Progreso</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#galeria">Galería</a>
+      <a href="#acerca">Acerca</a>
+      <a href="#contacto">Contacto</a>
     </nav>
 
-    <section id="inicio" class="hero" aria-labelledby="titulo-hero">
-      <h1 id="titulo-hero">Campaña XYZ</h1>
-      <p class="subtitulo">Transparencia y seguimiento en tiempo real de los hitos de nuestra campaña.</p>
-      <a href="#progreso" class="cta" aria-describedby="titulo-hero">Ver avance</a>
-    </section>
+    </div>
   </header>
 
-  <!-- Sección Progreso Central -->
-  <main id="contenido-principal">
-    <section id="progreso" aria-labelledby="progreso-titulo" class="progreso">
-      <header class="progreso-header">
-        <h2 id="progreso-titulo">Progreso general</h2>
-        <p id="progreso-descripcion">Cada proyecto completado incrementa el avance total.</p>
+  <!-- Banner principal con imagen amplia y lema -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-media" role="img" aria-label="Banner de la campaña con imagen destacada">
+      <!-- Reemplaza banner.jpg por tu imagen -->
+      <img src="img/banner.jpg" alt="Banner principal de la campaña" loading="lazy" />
+    </div>
+    <div class="container hero-content">
+      <h1 id="hero-title">Transparencia y avance medible</h1>
+      <p class="lead">Sigue en tiempo real cómo se cumplen los proyectos de la campaña.</p>
+      <a class="btn primary" href="#progreso">Ver avance</a>
+    </div>
+  </section>
+
+  <main>
+<section id="presentacion" class="section section-video" aria-labelledby="presentacion-title">
+  <div class="container">
+    <header class="section-head">
+      <h2 id="presentacion-title">Video de presentación</h2>
+      <p>Conoce la campaña en 60 segundos.</p>
+    </header>
+
+    <article class="video-card">
+      <div class="video-embed aspect-16x9">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/Vmb1tqYqyII?si=cfsqGxme8F3_PSga"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+    <!-- Bloque central: barra de progreso global -->
+    <section id="progreso" class="section" aria-labelledby="progreso-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="progreso-title">Progreso general</h2>
+          <p>Cada proyecto completado suma al porcentaje total.</p>
+        </header>
+        <div class="progress-wrap" role="group" aria-labelledby="progreso-title">
+          <progress id="progress" max="100" value="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</progress>
+          <div id="progress-label" class="progress-label" aria-hidden="true">0%</div>
+        </div>
+        <p id="progress-summary" class="visually-hidden" aria-live="polite">Progreso total: 0%.</p>
+      </div>
+    </section>
+
+    <!-- Proyectos (cada uno con checkbox + imagen + peso) -->
+<section id="proyectos" class="section" aria-labelledby="proyectos-title">
+  <div class="container">
+    <header class="section-head">
+      <h2 id="proyectos-title">Proyectos por eje</h2>
+    </header>
+
+    <ol class="grid projects" id="projects-list">
+
+      <!-- 1) Que no falte patio -->
+      <li class="card project" data-id="p01" data-axis="Que no falte patio" data-weight="12">
+        <figure class="media aspect-16x9">
+          <img src="img/e01_p1.jpg" alt="Recuperación de patios y áreas verdes" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Que no falte patio</span>
+          <h3 class="title">E01-P1 — Recuperación de patios</h3>
+          <p>Plan de mantención y activación de áreas verdes, con jornadas de limpieza y señalética de cuidado.</p>
+        </div>
+      </li>
+      <li class="card project" data-id="p02" data-axis="Que no falte patio" data-weight="10">
+        <figure class="media aspect-16x9">
+          <img src="img/e01_p2.jpg" alt="Sombra y mobiliario exterior" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Que no falte patio</span>
+          <h3 class="title">E01-P2 — Sombra y mobiliario</h3>
+          <p>Instalación de toldos, bancos y mesas modulares para estudio y convivencia al aire libre.</p>
+        </div>
+      </li>
+
+      <!-- 2) Salud Mental -->
+      <li class="card project" data-id="p03" data-axis="Salud Mental" data-weight="20">
+        <figure class="media aspect-16x9">
+          <img src="img/e02_p1.jpg" alt="Red de Primer Apoyo en salud mental" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Salud Mental</span>
+          <h3 class="title">E02-P1 — Red de Primer Apoyo</h3>
+          <p>Capacitación de estudiantes y docentes como primeros respondientes; derivación temprana y protocolos.</p>
+        </div>
+      </li>
+      <li class="card project" data-id="p04" data-axis="Salud Mental" data-weight="16">
+        <figure class="media aspect-16x9">
+          <img src="img/e02_p2.jpg" alt="Atención breve y talleres psicoeducativos" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Salud Mental</span>
+          <h3 class="title">E02-P2 — Atención breve</h3>
+          <p>Consultas breves gratuitas y talleres de manejo de estrés, sueño y organización académica.</p>
+        </div>
+      </li>
+
+      <!-- 3) Memoria y democracia -->
+      <li class="card project" data-id="p05" data-axis="Memoria y democracia" data-weight="14">
+        <figure class="media aspect-16x9">
+          <img src="img/e03_p1.jpg" alt="Archivo Oral Estudiantil" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Memoria y democracia</span>
+          <h3 class="title">E03-P1 — Archivo Oral</h3>
+          <p>Levantamiento de testimonios y documentos estudiantiles; repositorio abierto con curaduría básica.</p>
+        </div>
+      </li>
+      <li class="card project" data-id="p06" data-axis="Memoria y democracia" data-weight="12">
+        <figure class="media aspect-16x9">
+          <img src="img/e03_p2.jpg" alt="Ciclo de educación cívica" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Memoria y democracia</span>
+          <h3 class="title">E03-P2 — Educación cívica</h3>
+          <p>Charlas y simulaciones deliberativas sobre instituciones, participación y derechos fundamentales.</p>
+        </div>
+      </li>
+
+      <!-- 4) Aportemos a Chile y al mundo -->
+      <li class="card project" data-id="p07" data-axis="Aportemos a Chile y al mundo" data-weight="18">
+        <figure class="media aspect-16x9">
+          <img src="img/e04_p1.jpg" alt="Clínicas jurídicas en terreno" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Aportemos a Chile y al mundo</span>
+          <h3 class="title">E04-P1 — Clínicas en terreno</h3>
+          <p>Asesoría jurídica comunitaria itinerante con supervisión académica y alianzas municipales.</p>
+        </div>
+      </li>
+      <li class="card project" data-id="p08" data-axis="Aportemos a Chile y al mundo" data-weight="14">
+        <figure class="media aspect-16x9">
+          <img src="img/e04_p2.jpg" alt="Programa pro bono e informes en derecho comparado" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Aportemos a Chile y al mundo</span>
+          <h3 class="title">E04-P2 — Pro bono e informes</h3>
+          <p>Red de causas pro bono y elaboración de amicus/informes comparados con impacto público.</p>
+        </div>
+      </li>
+
+      <!-- 5) Salud y bienestar -->
+      <li class="card project" data-id="p09" data-axis="Salud y bienestar" data-weight="12">
+        <figure class="media aspect-16x9">
+          <img src="img/e05_p1.jpg" alt="Pausa activa y deporte libre" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Salud y bienestar</span>
+          <h3 class="title">E05-P1 — Pausa activa</h3>
+          <p>Bloques semanales de actividad física libre, préstamo de implementos y torneos recreativos.</p>
+        </div>
+      </li>
+      <li class="card project" data-id="p10" data-axis="Salud y bienestar" data-weight="10">
+        <figure class="media aspect-16x9">
+          <img src="img/e05_p2.jpg" alt="Menú saludable accesible en campus" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Salud y bienestar</span>
+          <h3 class="title">E05-P2 — Menú saludable</h3>
+          <p>Oferta de menús a precio protegido, rotulación nutricional simple y puntos de hidratación.</p>
+        </div>
+      </li>
+
+      <!-- 6) Academia -->
+      <li class="card project" data-id="p11" data-axis="Academia" data-weight="20">
+        <figure class="media aspect-16x9">
+          <img src="img/e06_p1.jpg" alt="Banco de apuntes abierto y responsable" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Academia</span>
+          <h3 class="title">E06-P1 — Banco de apuntes</h3>
+          <p>Repositorio abierto y versionado de apuntes, con criterios de calidad y citas adecuadas.</p>
+        </div>
+      </li>
+      <li class="card project" data-id="p12" data-axis="Academia" data-weight="16">
+        <figure class="media aspect-16x9">
+          <img src="img/e06_p2.jpg" alt="Tutorías entre pares con reconocimiento académico" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Academia</span>
+          <h3 class="title">E06-P2 — Tutorías entre pares</h3>
+          <p>Programa de tutores pares con seguimiento, rúbricas y posibilidad de reconocimiento en créditos.</p>
+        </div>
+      </li>
+
+      <!-- 7) Apoyémonos -->
+      <li class="card project" data-id="p13" data-axis="Apoyémonos" data-weight="18">
+        <figure class="media aspect-16x9">
+          <img src="img/e07_p1.jpg" alt="Fondo de emergencia estudiantil" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Apoyémonos</span>
+          <h3 class="title">E07-P1 — Fondo de emergencia</h3>
+          <p>Apoyo rápido y transparente para contingencias económicas, con rendición y comité mixto.</p>
+        </div>
+      </li>
+      <li class="card project" data-id="p14" data-axis="Apoyémonos" data-weight="12">
+        <figure class="media aspect-16x9">
+          <img src="img/e07_p2.jpg" alt="Bolsa de empleos y mentorías" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Apoyémonos</span>
+          <h3 class="title">E07-P2 — Empleos y mentorías</h3>
+          <p>Plataforma de trabajos part-time, pasantías y red de mentores egresados por áreas.</p>
+        </div>
+      </li>
+
+      <!-- 8) Disidencias -->
+      <li class="card project" data-id="p15" data-axis="Disidencias" data-weight="14">
+        <figure class="media aspect-16x9">
+          <img src="img/e08_p1.jpg" alt="Protocolo y acompañamiento a identidades diversas" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Disidencias</span>
+          <h3 class="title">E08-P1 — Acompañamiento</h3>
+          <p>Ruta clara de acompañamiento, nombre social y resguardo de datos; coordinación con unidades UC.</p>
+        </div>
+      </li>
+      <li class="card project" data-id="p16" data-axis="Disidencias" data-weight="12">
+        <figure class="media aspect-16x9">
+          <img src="img/e08_p2.jpg" alt="Formación en respeto y no discriminación" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Disidencias</span>
+          <h3 class="title">E08-P2 — Formación en respeto</h3>
+          <p>Talleres y campañas permanentes contra la discriminación; canales de denuncia accesibles.</p>
+        </div>
+      </li>
+
+      <!-- 9) Feminismo -->
+      <li class="card project" data-id="p17" data-axis="Feminismo" data-weight="18">
+        <figure class="media aspect-16x9">
+          <img src="img/e09_p1.jpg" alt="Prevención y acompañamiento en violencias" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Feminismo</span>
+          <h3 class="title">E09-P1 — Prevención y apoyo</h3>
+          <p>Prevención de violencias de género, acompañamiento jurídico-psicológico y articulación con protocolos.</p>
+        </div>
+      </li>
+      <li class="card project" data-id="p18" data-axis="Feminismo" data-weight="12">
+        <figure class="media aspect-16x9">
+          <img src="img/e09_p2.jpg" alt="Red de corresponsabilidad y cuidados" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Feminismo</span>
+          <h3 class="title">E09-P2 — Corresponsabilidad</h3>
+          <p>Red de apoyo a cuidadoras/es, mecanismos de flexibilidad académica y talleres de corresponsabilidad.</p>
+        </div>
+      </li>
+
+      <!-- 10) Medio Ambiente -->
+      <li class="card project" data-id="p19" data-axis="Medio Ambiente" data-weight="16">
+        <figure class="media aspect-16x9">
+          <img src="img/e10_p1.jpg" alt="Basura cero y reciclaje" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Medio Ambiente</span>
+          <h3 class="title">E10-P1 — Basura cero</h3>
+          <p>Puntos limpios, reducción de desechables y medición de huella con reportes trimestrales.</p>
+        </div>
+      </li>
+      <li class="card project" data-id="p20" data-axis="Medio Ambiente" data-weight="14">
+        <figure class="media aspect-16x9">
+          <img src="img/e10_p2.jpg" alt="Huerto y compostaje en campus" loading="lazy" />
+        </figure>
+        <div class="card-body">
+          <span class="axis-tag">Medio Ambiente</span>
+          <h3 class="title">E10-P2 — Huerto y compost</h3>
+          <p>Huerto comunitario, composteras y talleres de economía circular con evaluación semestral.</p>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+    <!-- Galería amplia (espacios para imágenes) -->
+    <section id="galeria" class="section" aria-labelledby="galeria-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="galeria-title">Galería de la campaña</h2>
+          <p>Momentos clave, actividades y material gráfico del equipo.</p>
+        </header>
+        <div class="grid gallery">
+          <figure class="media aspect-1x1"><img src="img/g01.jpg" alt="Imagen 1" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g02.jpg" alt="Imagen 2" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g03.jpg" alt="Imagen 3" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g04.jpg" alt="Imagen 4" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g05.jpg" alt="Imagen 5" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g06.jpg" alt="Imagen 6" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g07.jpg" alt="Imagen 7" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g08.jpg" alt="Imagen 8" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g09.jpg" alt="Imagen 9" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g10.jpg" alt="Imagen 10" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g11.jpg" alt="Imagen 11" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g12.jpg" alt="Imagen 12" loading="lazy" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Acerca -->
+    <section id="acerca" class="section" aria-labelledby="acerca-title">
+      <div class="container narrow">
+        <h2 id="acerca-title">Acerca de la campaña</h2>
+        <p>Buscamos transparencia, participación y resultados medibles. Este sitio concentra el estado de los proyectos, la documentación y el material visual.</p>
+      </div>
+    </section>
+
+<section id="contacto" class="section" aria-labelledby="contacto-title">
+  <div class="container narrow">
+    <h2 id="contacto-title">Contacto y redes</h2>
+
+    <article class="ig-card" aria-label="Instagram y contacto de la campaña">
+      <!-- Cabecera IG -->
+      <header class="ig-card__head">
+        <div class="ig-card__brand">
+          <img class="ig-card__icon" src="img/instagram.png" alt="" width="28" height="28">
+          <div class="ig-card__text">
+            <a class="ig-card__handle" href="https://instagram.com/agusbq_/" target="_blank" rel="noopener">@agusbq_</a>
+            <span class="ig-card__sub">Instagram oficial de la campaña</span>
+          </div>
+        </div>
+        <a class="btn primary ig-card__cta" href="https://instagram.com/agusbq_/" target="_blank" rel="noopener">Abrir Instagram</a>
       </header>
 
-      <!-- Barra de progreso central -->
-      <div class="progreso-centro" role="group" aria-labelledby="progreso-titulo" aria-describedby="progreso-descripcion">
-        <progress id="barra-progreso" max="100" value="0" aria-live="polite" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</progress>
-        <div class="progreso-porcentaje" id="progreso-porcentaje" aria-hidden="true">0%</div>
-      </div>
+  <!-- Mini feed con publicaciones de Instagram (uniforme) -->
+<div class="ig-card__grid" id="ig-feed">
 
-      <!-- Lista de proyectos / hitos (cada uno marca progreso) -->
-      <section id="proyectos" aria-labelledby="proyectos-titulo" class="proyectos">
-        <h3 id="proyectos-titulo">Proyectos de la campaña</h3>
-        <p class="ayuda">Marque los proyectos a medida que se completen. (El cálculo se activará con JS en el siguiente paso.)</p>
+  <div class="ig-embed ig-card__item">
+    <blockquote class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/p/DMWGvzavLUI/"
+      data-instgrm-version="14"></blockquote>
+  </div>
 
-        <!-- data-weight permite ponderar el impacto de cada proyecto en el % total -->
-        <ol class="lista-proyectos" id="lista-proyectos">
-          <li class="proyecto" data-weight="15">
-            <label>
-              <input type="checkbox" class="proyecto-check" name="p1" />
-              <span class="proyecto-titulo">P01 — Lanzamiento del sitio y branding</span>
-            </label>
-            <p class="proyecto-detalle">Definir identidad visual, guía de estilo y publicar la versión inicial del sitio.</p>
-          </li>
+  <div class="ig-embed ig-card__item">
+    <blockquote class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/p/DFjmoWUg2aQ/"
+      data-instgrm-version="14"></blockquote>
+  </div>
 
-          <li class="proyecto" data-weight="10">
-            <label>
-              <input type="checkbox" class="proyecto-check" name="p2" />
-              <span class="proyecto-titulo">P02 — Registro de voluntariado</span>
-            </label>
-            <p class="proyecto-detalle">Formulario, base de datos y flujo de confirmación para voluntarios.</p>
-          </li>
+  <div class="ig-embed ig-card__item">
+    <blockquote class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/p/DFW5SbJgYKX/"
+      data-instgrm-version="14"></blockquote>
+  </div>
 
-          <li class="proyecto" data-weight="20">
-            <label>
-              <input type="checkbox" class="proyecto-check" name="p3" />
-              <span class="proyecto-titulo">P03 — Plataforma de donaciones</span>
-            </label>
-            <p class="proyecto-detalle">Integración de pagos y generación de recibos con trazabilidad.</p>
-          </li>
+</div>
 
-          <li class="proyecto" data-weight="12">
-            <label>
-              <input type="checkbox" class="proyecto-check" name="p4" />
-              <span class="proyecto-titulo">P04 — Agenda pública y calendario</span>
-            </label>
-            <p class="proyecto-detalle">Calendario de eventos con inscripción y recordatorios.</p>
-          </li>
+<!-- Cárgalo una sola vez al final del <body> -->
+<script async src="//www.instagram.com/embed.js"></script>
+  
+      <!-- Línea de contacto -->
+      <footer class="ig-card__foot">
+        <a class="ig-card__mail" href="mailto:equipo@campania.bqj">derecho@donde.bqj</a>
+      </footer>
+    </article>
+  </div>
+</section>
 
-          <li class="proyecto" data-weight="18">
-            <label>
-              <input type="checkbox" class="proyecto-check" name="p5" />
-              <span class="proyecto-titulo">P05 — Dashboard de métricas</span>
-            </label>
-            <p class="proyecto-detalle">Panel con KPIs (donaciones, voluntarios, alcance) y descargas CSV.</p>
-          </li>
 
-          <li class="proyecto" data-weight="10">
-            <label>
-              <input type="checkbox" class="proyecto-check" name="p6" />
-              <span class="proyecto-titulo">P06 — Blog y comunicados</span>
-            </label>
-            <p class="proyecto-detalle">Noticias, comunicados y notas de prensa, con SEO básico.</p>
-          </li>
-
-          <li class="proyecto" data-weight="15">
-            <label>
-              <input type="checkbox" class="proyecto-check" name="p7" />
-              <span class="proyecto-titulo">P07 — Accesibilidad y performance</span>
-            </label>
-            <p class="proyecto-detalle">Mejoras WCAG AA, tiempos de carga y Lighthouse &gt;90.</p>
-          </li>
-        </ol>
-
-        <!-- Resumen accesible para lectores de pantalla (se actualizará con JS) -->
-        <p id="resumen-progreso" class="sr-only" aria-live="polite">Progreso total: 0% (0 de 7 proyectos completados).</p>
-      </section>
-    </section>
-
-    <!-- Sección "Acerca" -->
-    <section id="acerca" aria-labelledby="acerca-titulo" class="acerca">
-      <h3 id="acerca-titulo">Acerca de la campaña</h3>
-      <p>Esta campaña busca transparencia y participación. El progreso refleja el cumplimiento real de los proyectos clave.</p>
-    </section>
-
-    <!-- Sección "Contacto" -->
-    <section id="contacto" aria-labelledby="contacto-titulo" class="contacto">
-      <h3 id="contacto-titulo">Contacto</h3>
-      <address>
-        <p><a href="mailto:equipo@campania.xyz">equipo@campania.xyz</a></p>
-      </address>
-      <form class="form-contacto" aria-label="Formulario de contacto" action="#" method="post">
-        <div>
-          <label for="nombre">Nombre</label>
-          <input id="nombre" name="nombre" type="text" autocomplete="name" />
-        </div>
-        <div>
-          <label for="email">Correo</label>
-          <input id="email" name="email" type="email" autocomplete="email" />
-        </div>
-        <div>
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" rows="4"></textarea>
-        </div>
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-  </main>
-
-  <!-- Pie de página -->
-  <footer class="footer">
-    <small>&copy; <span id="anio">2025</span> Campaña XYZ. Todos los derechos reservados.</small>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year">2025</span> Campaña XYZ. Todos los derechos reservados.</small>
+      <a class="btn primary" href="#top">Volver arriba</a>
+    </div>
   </footer>
-
-  <!-- JS se agregará en el siguiente paso (cálculo de % y persistencia) -->
-  <noscript>Active JavaScript para ver el progreso actualizado automáticamente.</noscript>
 </body>
 </html>

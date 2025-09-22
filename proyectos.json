@@ -1,0 +1,11 @@
+{
+  "proyectos": [
+    { "id": "p01", "titulo": "P01 — Lanzamiento del sitio y branding",   "weight": 15, "completed": false  },
+    { "id": "p02", "titulo": "P02 — Registro de voluntariado",            "weight": 10, "completed": false },
+    { "id": "p03", "titulo": "P03 — Plataforma de donaciones",            "weight": 20, "completed": true  },
+    { "id": "p04", "titulo": "P04 — Agenda pública y calendario",         "weight": 12, "completed": false },
+    { "id": "p05", "titulo": "P05 — Dashboard de métricas",               "weight": 18, "completed": false },
+    { "id": "p06", "titulo": "P06 — Blog y comunicados",                  "weight": 10, "completed": false },
+    { "id": "p07", "titulo": "P07 — Accesibilidad y performance",         "weight": 15, "completed": false }
+  ]
+}
