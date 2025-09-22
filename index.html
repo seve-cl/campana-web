@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Campaña • Proyectos y Progreso</title>
+  <meta name="description" content="Página de campaña con barra de progreso central y proyectos marcables." />
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="campana.css">
+  <script src="campana.js"></script>
+
+  <!-- CSS se agregará en el siguiente paso -->
+</head>
+<body>
+  <!-- Encabezado / Hero -->
+  <header>
+    <nav aria-label="Principal">
+      <a href="#inicio" class="brand" aria-label="Inicio">Campaña XYZ</a>
+      <ul class="nav">
+        <li><a href="#progreso">Progreso</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#acerca">Acerca</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <section id="inicio" class="hero" aria-labelledby="titulo-hero">
+      <h1 id="titulo-hero">Campaña XYZ</h1>
+      <p class="subtitulo">Transparencia y seguimiento en tiempo real de los hitos de nuestra campaña.</p>
+      <a href="#progreso" class="cta" aria-describedby="titulo-hero">Ver avance</a>
+    </section>
+  </header>
+
+  <!-- Sección Progreso Central -->
+  <main id="contenido-principal">
+    <section id="progreso" aria-labelledby="progreso-titulo" class="progreso">
+      <header class="progreso-header">
+        <h2 id="progreso-titulo">Progreso general</h2>
+        <p id="progreso-descripcion">Cada proyecto completado incrementa el avance total.</p>
+      </header>
+
+      <!-- Barra de progreso central -->
+      <div class="progreso-centro" role="group" aria-labelledby="progreso-titulo" aria-describedby="progreso-descripcion">
+        <progress id="barra-progreso" max="100" value="0" aria-live="polite" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</progress>
+        <div class="progreso-porcentaje" id="progreso-porcentaje" aria-hidden="true">0%</div>
+      </div>
+
+      <!-- Lista de proyectos / hitos (cada uno marca progreso) -->
+      <section id="proyectos" aria-labelledby="proyectos-titulo" class="proyectos">
+        <h3 id="proyectos-titulo">Proyectos de la campaña</h3>
+        <p class="ayuda">Marque los proyectos a medida que se completen. (El cálculo se activará con JS en el siguiente paso.)</p>
+
+        <!-- data-weight permite ponderar el impacto de cada proyecto en el % total -->
+        <ol class="lista-proyectos" id="lista-proyectos">
+          <li class="proyecto" data-weight="15">
+            <label>
+              <input type="checkbox" class="proyecto-check" name="p1" />
+              <span class="proyecto-titulo">P01 — Lanzamiento del sitio y branding</span>
+            </label>
+            <p class="proyecto-detalle">Definir identidad visual, guía de estilo y publicar la versión inicial del sitio.</p>
+          </li>
+
+          <li class="proyecto" data-weight="10">
+            <label>
+              <input type="checkbox" class="proyecto-check" name="p2" />
+              <span class="proyecto-titulo">P02 — Registro de voluntariado</span>
+            </label>
+            <p class="proyecto-detalle">Formulario, base de datos y flujo de confirmación para voluntarios.</p>
+          </li>
+
+          <li class="proyecto" data-weight="20">
+            <label>
+              <input type="checkbox" class="proyecto-check" name="p3" />
+              <span class="proyecto-titulo">P03 — Plataforma de donaciones</span>
+            </label>
+            <p class="proyecto-detalle">Integración de pagos y generación de recibos con trazabilidad.</p>
+          </li>
+
+          <li class="proyecto" data-weight="12">
+            <label>
+              <input type="checkbox" class="proyecto-check" name="p4" />
+              <span class="proyecto-titulo">P04 — Agenda pública y calendario</span>
+            </label>
+            <p class="proyecto-detalle">Calendario de eventos con inscripción y recordatorios.</p>
+          </li>
+
+          <li class="proyecto" data-weight="18">
+            <label>
+              <input type="checkbox" class="proyecto-check" name="p5" />
+              <span class="proyecto-titulo">P05 — Dashboard de métricas</span>
+            </label>
+            <p class="proyecto-detalle">Panel con KPIs (donaciones, voluntarios, alcance) y descargas CSV.</p>
+          </li>
+
+          <li class="proyecto" data-weight="10">
+            <label>
+              <input type="checkbox" class="proyecto-check" name="p6" />
+              <span class="proyecto-titulo">P06 — Blog y comunicados</span>
+            </label>
+            <p class="proyecto-detalle">Noticias, comunicados y notas de prensa, con SEO básico.</p>
+          </li>
+
+          <li class="proyecto" data-weight="15">
+            <label>
+              <input type="checkbox" class="proyecto-check" name="p7" />
+              <span class="proyecto-titulo">P07 — Accesibilidad y performance</span>
+            </label>
+            <p class="proyecto-detalle">Mejoras WCAG AA, tiempos de carga y Lighthouse &gt;90.</p>
+          </li>
+        </ol>
+
+        <!-- Resumen accesible para lectores de pantalla (se actualizará con JS) -->
+        <p id="resumen-progreso" class="sr-only" aria-live="polite">Progreso total: 0% (0 de 7 proyectos completados).</p>
+      </section>
+    </section>
+
+    <!-- Sección "Acerca" -->
+    <section id="acerca" aria-labelledby="acerca-titulo" class="acerca">
+      <h3 id="acerca-titulo">Acerca de la campaña</h3>
+      <p>Esta campaña busca transparencia y participación. El progreso refleja el cumplimiento real de los proyectos clave.</p>
+    </section>
+
+    <!-- Sección "Contacto" -->
+    <section id="contacto" aria-labelledby="contacto-titulo" class="contacto">
+      <h3 id="contacto-titulo">Contacto</h3>
+      <address>
+        <p><a href="mailto:equipo@campania.xyz">equipo@campania.xyz</a></p>
+      </address>
+      <form class="form-contacto" aria-label="Formulario de contacto" action="#" method="post">
+        <div>
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" autocomplete="name" />
+        </div>
+        <div>
+          <label for="email">Correo</label>
+          <input id="email" name="email" type="email" autocomplete="email" />
+        </div>
+        <div>
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <small>&copy; <span id="anio">2025</span> Campaña XYZ. Todos los derechos reservados.</small>
+  </footer>
+
+  <!-- JS se agregará en el siguiente paso (cálculo de % y persistencia) -->
+  <noscript>Active JavaScript para ver el progreso actualizado automáticamente.</noscript>
+</body>
+</html>
