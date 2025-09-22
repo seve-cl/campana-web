@@ -1,164 +1,33 @@
 {
-  "projects": [
-    {
-      "id": "p01",
-      "axis": "Que no falte patio",
-      "title": "E01-P1 — Recuperación de patios",
-      "description": "Plan de mantención y activación de áreas verdes, con jornadas de limpieza y señalética de cuidado.",
-      "image": "img/e01_p1.jpg",
-      "weight": 12
-    },
-    {
-      "id": "p02",
-      "axis": "Que no falte patio",
-      "title": "E01-P2 — Sombra y mobiliario",
-      "description": "Instalación de toldos, bancos y mesas modulares para estudio y convivencia al aire libre.",
-      "image": "img/e01_p2.jpg",
-      "weight": 10
-    },
-    {
-      "id": "p03",
-      "axis": "Salud Mental",
-      "title": "E02-P1 — Red de Primer Apoyo",
-      "description": "Capacitación de estudiantes y docentes como primeros respondientes; derivación temprana y protocolos.",
-      "image": "img/e02_p1.jpg",
-      "weight": 20
-    },
-    {
-      "id": "p04",
-      "axis": "Salud Mental",
-      "title": "E02-P2 — Atención breve",
-      "description": "Consultas breves gratuitas y talleres de manejo de estrés, sueño y organización académica.",
-      "image": "img/e02_p2.jpg",
-      "weight": 16
-    },
-    {
-      "id": "p05",
-      "axis": "Memoria y democracia",
-      "title": "E03-P1 — Archivo Oral",
-      "description": "Levantamiento de testimonios y documentos estudiantiles; repositorio abierto con curaduría básica.",
-      "image": "img/e03_p1.jpg",
-      "weight": 14
-    },
-    {
-      "id": "p06",
-      "axis": "Memoria y democracia",
-      "title": "E03-P2 — Educación cívica",
-      "description": "Charlas y simulaciones deliberativas sobre instituciones, participación y derechos fundamentales.",
-      "image": "img/e03_p2.jpg",
-      "weight": 12
-    },
-    {
-      "id": "p07",
-      "axis": "Aportemos a Chile y al mundo",
-      "title": "E04-P1 — Clínicas en terreno",
-      "description": "Asesoría jurídica comunitaria itinerante con supervisión académica y alianzas municipales.",
-      "image": "img/e04_p1.jpg",
-      "weight": 18
-    },
-    {
-      "id": "p08",
-      "axis": "Aportemos a Chile y al mundo",
-      "title": "E04-P2 — Pro bono e informes",
-      "description": "Red de causas pro bono y elaboración de amicus/informes comparados con impacto público.",
-      "image": "img/e04_p2.jpg",
-      "weight": 14
-    },
-    {
-      "id": "p09",
-      "axis": "Salud y bienestar",
-      "title": "E05-P1 — Pausa activa",
-      "description": "Bloques semanales de actividad física libre, préstamo de implementos y torneos recreativos.",
-      "image": "img/e05_p1.jpg",
-      "weight": 12
-    },
-    {
-      "id": "p10",
-      "axis": "Salud y bienestar",
-      "title": "E05-P2 — Menú saludable",
-      "description": "Oferta de menús a precio protegido, rotulación nutricional simple y puntos de hidratación.",
-      "image": "img/e05_p2.jpg",
-      "weight": 10
-    },
-    {
-      "id": "p11",
-      "axis": "Academia",
-      "title": "E06-P1 — Banco de apuntes",
-      "description": "Repositorio abierto y versionado de apuntes, con criterios de calidad y citas adecuadas.",
-      "image": "img/e06_p1.jpg",
-      "weight": 20
-    },
-    {
-      "id": "p12",
-      "axis": "Academia",
-      "title": "E06-P2 — Tutorías entre pares",
-      "description": "Programa de tutores pares con seguimiento, rúbricas y posibilidad de reconocimiento en créditos.",
-      "image": "img/e06_p2.jpg",
-      "weight": 16
-    },
-    {
-      "id": "p13",
-      "axis": "Apoyémonos",
-      "title": "E07-P1 — Fondo de emergencia",
-      "description": "Apoyo rápido y transparente para contingencias económicas, con rendición y comité mixto.",
-      "image": "img/e07_p1.jpg",
-      "weight": 18
-    },
-    {
-      "id": "p14",
-      "axis": "Apoyémonos",
-      "title": "E07-P2 — Empleos y mentorías",
-      "description": "Plataforma de trabajos part-time, pasantías y red de mentores egresados por áreas.",
-      "image": "img/e07_p2.jpg",
-      "weight": 12
-    },
-    {
-      "id": "p15",
-      "axis": "Disidencias",
-      "title": "E08-P1 — Acompañamiento",
-      "description": "Ruta clara de acompañamiento, nombre social y resguardo de datos; coordinación con unidades UC.",
-      "image": "img/e08_p1.jpg",
-      "weight": 14
-    },
-    {
-      "id": "p16",
-      "axis": "Disidencias",
-      "title": "E08-P2 — Formación en respeto",
-      "description": "Talleres y campañas permanentes contra la discriminación; canales de denuncia accesibles.",
-      "image": "img/e08_p2.jpg",
-      "weight": 12
-    },
-    {
-      "id": "p17",
-      "axis": "Feminismo",
-      "title": "E09-P1 — Prevención y apoyo",
-      "description": "Prevención de violencias de género, acompañamiento jurídico-psicológico y articulación con protocolos.",
-      "image": "img/e09_p1.jpg",
-      "weight": 18
-    },
-    {
-      "id": "p18",
-      "axis": "Feminismo",
-      "title": "E09-P2 — Corresponsabilidad",
-      "description": "Red de apoyo a cuidadoras/es, mecanismos de flexibilidad académica y talleres de corresponsabilidad.",
-      "image": "img/e09_p2.jpg",
-      "weight": 12
-    },
-    {
-      "id": "p19",
-      "axis": "Medio Ambiente",
-      "title": "E10-P1 — Basura cero",
-      "description": "Puntos limpios, reducción de desechables y medición de huella con reportes trimestrales.",
-      "image": "img/e10_p1.jpg",
-      "weight": 16
-    },
-    {
-      "id": "p20",
-      "axis": "Medio Ambiente",
-      "title": "E10-P2 — Huerto y compost",
-      "description": "Huerto comunitario, composteras y talleres de economía circular con evaluación semestral.",
-      "image": "img/e10_p2.jpg",
-      "weight": 14
-    }
+  "proyectos": [
+    {"id":"p01","axis":"Que no falte patio","titulo":"E01-P1 — Recuperación de patios","description":"Plan de mantención y activación de áreas verdes, con jornadas de limpieza y señalética de cuidado.","image":"img/e01_p1.jpg","weight":12,"completed":true},
+    {"id":"p02","axis":"Que no falte patio","titulo":"E01-P2 — Sombra y mobiliario","description":"Instalación de toldos, bancos y mesas modulares para estudio y convivencia al aire libre.","image":"img/e01_p2.jpg","weight":10,"completed":false},
+
+    {"id":"p03","axis":"Salud Mental","titulo":"E02-P1 — Red de Primer Apoyo","description":"Capacitación de estudiantes y docentes como primeros respondientes; derivación temprana y protocolos.","image":"img/e02_p1.jpg","weight":20,"completed":true},
+    {"id":"p04","axis":"Salud Mental","titulo":"E02-P2 — Atención breve","description":"Consultas breves gratuitas y talleres de manejo de estrés, sueño y organización académica.","image":"img/e02_p2.jpg","weight":16,"completed":false},
+
+    {"id":"p05","axis":"Memoria y democracia","titulo":"E03-P1 — Archivo Oral","description":"Levantamiento de testimonios y documentos estudiantiles; repositorio abierto con curaduría básica.","image":"img/e03_p1.jpg","weight":14,"completed":true},
+    {"id":"p06","axis":"Memoria y democracia","titulo":"E03-P2 — Educación cívica","description":"Charlas y simulaciones deliberativas sobre instituciones, participación y derechos fundamentales.","image":"img/e03_p2.jpg","weight":12,"completed":false},
+
+    {"id":"p07","axis":"Aportemos a Chile y al mundo","titulo":"E04-P1 — Clínicas en terreno","description":"Asesoría jurídica comunitaria itinerante con supervisión académica y alianzas municipales.","image":"img/e04_p1.jpg","weight":18,"completed":true},
+    {"id":"p08","axis":"Aportemos a Chile y al mundo","titulo":"E04-P2 — Pro bono e informes","description":"Red de causas pro bono y elaboración de amicus/informes comparados con impacto público.","image":"img/e04_p2.jpg","weight":14,"completed":false},
+
+    {"id":"p09","axis":"Salud y bienestar","titulo":"E05-P1 — Pausa activa","description":"Bloques semanales de actividad física libre, préstamo de implementos y torneos recreativos.","image":"img/e05_p1.jpg","weight":12,"completed":true},
+    {"id":"p10","axis":"Salud y bienestar","titulo":"E05-P2 — Menú saludable","description":"Oferta de menús a precio protegido, rotulación nutricional simple y puntos de hidratación.","image":"img/e05_p2.jpg","weight":10,"completed":false},
+
+    {"id":"p11","axis":"Academia","titulo":"E06-P1 — Banco de apuntes","description":"Repositorio abierto y versionado de apuntes, con criterios de calidad y citas adecuadas.","image":"img/e06_p1.jpg","weight":20,"completed":true},
+    {"id":"p12","axis":"Academia","titulo":"E06-P2 — Tutorías entre pares","description":"Programa de tutores pares con seguimiento, rúbricas y posibilidad de reconocimiento en créditos.","image":"img/e06_p2.jpg","weight":16,"completed":false},
+
+    {"id":"p13","axis":"Apoyémonos","titulo":"E07-P1 — Fondo de emergencia","description":"Apoyo rápido y transparente para contingencias económicas, con rendición y comité mixto.","image":"img/e07_p1.jpg","weight":18,"completed":true},
+    {"id":"p14","axis":"Apoyémonos","titulo":"E07-P2 — Empleos y mentorías","description":"Plataforma de trabajos part-time, pasantías y red de mentores egresados por áreas.","image":"img/e07_p2.jpg","weight":12,"completed":false},
+
+    {"id":"p15","axis":"Disidencias","titulo":"E08-P1 — Acompañamiento","description":"Ruta clara de acompañamiento, nombre social y resguardo de datos; coordinación con unidades UC.","image":"img/e08_p1.jpg","weight":14,"completed":true},
+    {"id":"p16","axis":"Disidencias","titulo":"E08-P2 — Formación en respeto","description":"Talleres y campañas permanentes contra la discriminación; canales de denuncia accesibles.","image":"img/e08_p2.jpg","weight":12,"completed":false},
+
+    {"id":"p17","axis":"Feminismo","titulo":"E09-P1 — Prevención y apoyo","description":"Prevención de violencias de género, acompañamiento jurídico-psicológico y articulación con protocolos.","image":"img/e09_p1.jpg","weight":18,"completed":true},
+    {"id":"p18","axis":"Feminismo","titulo":"E09-P2 — Corresponsabilidad","description":"Red de apoyo a cuidadoras/es, mecanismos de flexibilidad académica y talleres de corresponsabilidad.","image":"img/e09_p2.jpg","weight":12,"completed":false},
+
+    {"id":"p19","axis":"Medio Ambiente","titulo":"E10-P1 — Basura cero","description":"Puntos limpios, reducción de desechables y medición de huella con reportes trimestrales.","image":"img/e10_p1.jpg","weight":16,"completed":true},
+    {"id":"p20","axis":"Medio Ambiente","titulo":"E10-P2 — Huerto y compost","description":"Huerto comunitario, composteras y talleres de economía circular con evaluación semestral.","image":"img/e10_p2.jpg","weight":14,"completed":false}
   ]
 }
