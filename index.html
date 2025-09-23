@@ -25,8 +25,8 @@
       <a href="#progreso">Progreso</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#galeria">Galería</a>
-      <a href="#acerca">Acerca</a>
       <a href="#contacto">Contacto</a>
+      <a href="cofeuc.html">COFEUC</a>
     </nav>
 
     </div>
@@ -69,6 +69,49 @@
     </article>
   </div>
 </section>
+
+<!-- Calendario -->
+<section id="calendario" class="section" aria-labelledby="cal-title">
+  <div class="container">
+    <header class="section-head">
+      <h2 id="cal-title">Calendario</h2>
+    </header>
+
+    <div class="calendar card">
+      <div class="cal-header">
+        <h3 class="cal-month" id="cal-month-label">—</h3>
+        <div class="cal-nav">
+          <button data-cal-prev aria-label="Mes anterior">←</button>
+          <button data-cal-today aria-label="Ir a hoy">Hoy</button>
+          <button data-cal-next aria-label="Mes siguiente">→</button>
+        </div>
+      </div>
+
+      <div class="cal-grid" role="grid" aria-labelledby="cal-month-label">
+        <div class="cal-weekdays" role="row">
+          <span class="cal-wd" role="columnheader">Lun</span>
+          <span class="cal-wd" role="columnheader">Mar</span>
+          <span class="cal-wd" role="columnheader">Mié</span>
+          <span class="cal-wd" role="columnheader">Jue</span>
+          <span class="cal-wd" role="columnheader">Vie</span>
+          <span class="cal-wd" role="columnheader">Sáb</span>
+          <span class="cal-wd" role="columnheader">Dom</span>
+        </div>
+        <div class="cal-days" role="rowgroup" id="cal-days"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal de eventos del día -->
+<div class="cal-modal" id="cal-modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="cal-modal__dialog" role="document">
+    <button class="cal-modal__close" id="cal-modal-close" aria-label="Cerrar">×</button>
+    <h3 class="cal-modal__title" id="cal-modal-date">—</h3>
+    <ul class="cal-modal__list" id="cal-modal-list"></ul>
+  </div>
+</div>
+
 
 
     <!-- Bloque central: barra de progreso global -->
@@ -396,7 +439,7 @@
   
       <!-- Línea de contacto -->
       <footer class="ig-card__foot">
-        <a class="ig-card__mail" href="mailto:equipo@campania.bqj">derecho@donde.bqj</a>
+        <a class="ig-card__mail" href="mailto:equipo@campania.bqj">✉ derecho@donde.bqj</a>
       </footer>
     </article>
   </div>
