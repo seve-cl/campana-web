@@ -59,6 +59,137 @@ img{max-width:100%; height:auto; display:block}
   background:#000; /* evita parpadeos al cargar */
 }
 
+/* ===== Calendario (compacto, blanco, alineado) ===== */
+:root{
+  /* Alto fijo de cada fila de días (ajústalo si quieres) */
+  --cal-day-h: 112px;
+}
+
+.calendar.card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  padding:12px;
+  max-width:min(1200px, 100%);
+  margin-inline:auto;
+}
+
+/* Encabezado: mes centrado + controles a la derecha (opción B) */
+.calendar.card .cal-header{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items:center;
+  gap:12px;
+  padding:6px 0 10px;
+}
+.calendar.card .cal-month{
+  grid-column:2;             
+  text-align:center;
+  margin:0;
+  font-weight:800;
+  letter-spacing:.3px;
+  color:var(--text);
+  font-size:1.1rem;
+}
+.calendar.card .cal-nav{
+  grid-column:3;             
+  justify-self:end;
+}
+
+.cal-nav{
+  display:inline-flex; gap:6px; background:#fbfcfe; border:1px solid var(--border);
+  border-radius:999px; padding:4px; box-shadow:var(--shadow);
+}
+.cal-nav button{
+  border:0; background:transparent; color:var(--brand-ink);
+  font-weight:700; padding:.45rem .7rem; border-radius:999px; cursor:pointer;
+}
+.cal-nav button:hover{ background:#f3f7ff; }
+.cal-nav [data-cal-today]{ background:linear-gradient(90deg,var(--brand),var(--brand-2)); color:#fff; }
+.cal-nav [data-cal-today]:hover{ filter:brightness(.98); }
+
+/* Cabeceras de semana (Lun–Dom) */
+.cal-grid{ display:grid; gap:8px; }
+.cal-weekdays{
+  display:grid; grid-template-columns:repeat(7,1fr); gap:8px;
+  color:var(--muted); font-weight:700; font-size:.85rem;
+}
+.cal-wd{ text-align:center; padding:6px 0; }
+
+/* Grilla de días: columnas y filas fijas */
+.cal-days{
+  display:grid; grid-template-columns:repeat(7,1fr); gap:8px;
+  grid-auto-rows: var(--cal-day-h);
+}
+
+/* Tarjeta del día */
+.cal-day{
+  height:100%; min-height:0; overflow:hidden;
+  background:#fff; border:1px solid var(--border); border-radius:14px;
+  padding:8px; display:flex; flex-direction:column; gap:6px; position:relative;
+}
+.cal-day:hover{ border-color:#dfe6f2; box-shadow:var(--shadow); }
+.cal-day--muted{ opacity:.55; } /* (no se usa en 4 semanas, se deja por si vuelves a mensual) */
+.cal-day--today{ outline:2px solid var(--brand-2); outline-offset:2px; }
+
+/* Encabezado del día */
+.cal-day__head{
+  display:flex; align-items:center; justify-content:space-between;
+  font-weight:700; font-size:.9rem; flex:0 0 auto;
+}
+
+/* Badges de eventos (truncables, pegados abajo) */
+.cal-badges{
+  margin-top:auto; display:flex; flex-wrap:wrap; gap:6px;
+  max-height: calc(var(--cal-day-h) - 40px); overflow:hidden;
+}
+.cal-badge{
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:.75rem; font-weight:700; padding:3px 8px; border-radius:999px;
+  background:linear-gradient(90deg,var(--brand),var(--brand-2)); color:#fff;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%;
+}
+.cal-badge--more{
+  background:#eef3ff; color:var(--brand-ink); border:1px solid var(--border);
+}
+
+/* Modal */
+.cal-modal{
+  position:fixed; inset:0; background:rgba(2,6,23,.35);
+  display:none; align-items:center; justify-content:center; padding:20px;
+}
+.cal-modal[aria-hidden="false"]{ display:flex; }
+.cal-modal__dialog{
+  width:min(700px, 100%); background:#fff; border:1px solid var(--border);
+  border-radius:18px; box-shadow:var(--shadow); padding:16px; position:relative;
+}
+.cal-modal__close{
+  position:absolute; top:10px; right:10px;
+  border:1px solid var(--border); background:#fff; border-radius:10px;
+  padding:.35rem .55rem; cursor:pointer;
+}
+.cal-modal__title{ margin:0 0 10px 0; }
+.cal-modal__list{ list-style:none; margin:0; padding:0; display:grid; gap:10px; }
+.cal-event{
+  border:1px solid var(--border); border-radius:12px; padding:10px;
+  display:grid; gap:4px; background:#fbfcfe;
+}
+.cal-event__title{ font-weight:800; }
+.cal-event__meta{ color:var(--muted); font-size:.9rem; display:flex; gap:10px; flex-wrap:wrap; }
+
+/* Responsive (más compacto) */
+@media (max-width: 900px){
+  :root{ --cal-day-h: 104px; }
+  .calendar.card .cal-month{ font-size:1rem; }
+}
+@media (max-width: 720px){
+  :root{ --cal-day-h: 96px; }
+  .cal-day{ padding:6px; }
+  .cal-badge{ font-size:.72rem; padding:3px 7px; }
+}
+
+
 /* Progreso */
 .progress-wrap{display:grid; place-items:center; gap:10px; padding:20px; border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow)}
 progress{width:min(760px,100%); height:22px; appearance:none; -webkit-appearance:none; border:none}

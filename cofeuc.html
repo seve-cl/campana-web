@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>COFEUC — Votaciones</title>
+  <link rel="icon" href="img/logo.png" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cofeuc.css">
+</head>
+<body>
+
+  <!-- Header del sitio (opcional: si ya lo incluyes con include, puedes omitirlo) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./">
+        <img class="brand-logo" src="img/logo.png" alt="" width="36" height="36">
+        <span class="brand-name">Campaña</span>
+      </a>
+      <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false">Menú</button>
+      <nav id="site-nav" class="site-nav" aria-label="Principal">
+        <a href="./">Inicio</a>
+        <a href="index.html#proyectos">Proyectos</a>
+        <a href="index.html#calendario">Calendario</a>
+        <a aria-current="page">COFEUC</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO / Banner (reutiliza tu estilo .hero) -->
+  <section class="hero">
+    <div class="hero-media">
+      <!-- Usa el mismo banner que en la página principal -->
+      <img src="img/banner.jpg" alt="Consejo de Federación de Estudiantes UC (COFEUC)">
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="title">COFEUC — Votaciones y Proyectos</h1>
+        <p class="lead">Registro de votaciones y seguimiento de iniciativas en Consejo de Federación.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Listado de votaciones/proyectos -->
+  <section class="section" aria-labelledby="cofeuc-title">
+    <div class="container">
+      <header class="section-head">
+        <h2 id="cofeuc-title">Votaciones</h2>
+        <div class="cof-controls" aria-label="Filtros">
+          <!-- Si luego quieres filtros por estado/eje, puedes activarlos aquí -->
+          <!-- <select class="cof-filter"><option>Todos</option><option>En votación</option><option>Aprobados</option><option>Rechazados</option></select> -->
+        </div>
+      </header>
+
+      <ol class="grid cof-list" id="cof-list">
+        <!-- Tarjeta 1 -->
+        <li class="vote-card">
+          <a class="vote-card__media" href="cofeuc-proyecto.html">
+            <img src="img/cofeuc/p01.jpg" alt="Proyecto 1: Convenio asesorías jurídicas comunitarias" loading="lazy">
+          </a>
+          <div class="vote-card__body">
+            <div class="vote-card__kicker">
+              <span class="badge">En votación</span>
+              <span class="chip">COFEUC</span>
+            </div>
+            <h3 class="vote-card__title">
+              <a href="cofeuc-proyecto.html">Convenio de asesorías jurídicas comunitarias</a>
+            </h3>
+            <p class="vote-card__desc">Formalización de convenio con municipios para operativos en terreno.</p>
+            <div class="vote-card__meta">
+              <span>Sesión: 03/10</span>
+              <span>Mayoría simple</span>
+            </div>
+          </div>
+        </li>
+
+        <!-- Tarjeta 2 -->
+        <li class="vote-card">
+          <a class="vote-card__media" href="cofeuc-proyecto.html">
+            <img src="img/cofeuc/p02.jpg" alt="Proyecto 2: Fondo de emergencias estudiantiles" loading="lazy">
+          </a>
+          <div class="vote-card__body">
+            <div class="vote-card__kicker">
+              <span class="badge badge--ok">Aprobado</span>
+              <span class="chip">Finanzas</span>
+            </div>
+            <h3 class="vote-card__title">
+              <a href="cofeuc-proyecto.html">Fondo de emergencias estudiantiles</a>
+            </h3>
+            <p class="vote-card__desc">Apoyo rápido y transparente con comité mixto y rendición trimestral.</p>
+            <div class="vote-card__meta">
+              <span>Sesión: 24/09</span>
+              <span>2/3 presentes</span>
+            </div>
+          </div>
+        </li>
+
+        <!-- Tarjeta 3 -->
+        <li class="vote-card">
+          <a class="vote-card__media" href="cofeuc-proyecto.html">
+            <img src="img/cofeuc/p03.jpg" alt="Proyecto 3: Programa de tutorías entre pares" loading="lazy">
+          </a>
+          <div class="vote-card__body">
+            <div class="vote-card__kicker">
+              <span class="badge">En votación</span>
+              <span class="chip">Academia</span>
+            </div>
+            <h3 class="vote-card__title">
+              <a href="cofeuc-proyecto.html">Programa de tutorías entre pares</a>
+            </h3>
+            <p class="vote-card__desc">Reconocimiento de horas e incentivos para tutores/as.</p>
+            <div class="vote-card__meta">
+              <span>Sesión: 10/10</span>
+              <span>Mayoría simple</span>
+            </div>
+          </div>
+        </li>
+
+        <!-- Tarjeta 4 -->
+        <li class="vote-card">
+          <a class="vote-card__media" href="cofeuc-proyecto.html">
+            <img src="img/cofeuc/p04.jpg" alt="Proyecto 4: Basura cero en campus" loading="lazy">
+          </a>
+          <div class="vote-card__body">
+            <div class="vote-card__kicker">
+              <span class="badge badge--warn">Rechazado</span>
+              <span class="chip">Medioambiente</span>
+            </div>
+            <h3 class="vote-card__title">
+              <a href="cofeuc-proyecto.html">Basura cero en campus</a>
+            </h3>
+            <p class="vote-card__desc">Fase piloto con puntos limpios y métricas públicas.</p>
+            <div class="vote-card__meta">
+              <span>Sesión: 18/09</span>
+              <span>Mayoría simple</span>
+            </div>
+          </div>
+        </li>
+
+        <!-- Tarjeta 5 -->
+        <li class="vote-card">
+          <a class="vote-card__media" href="cofeuc-proyecto.html">
+            <img src="img/cofeuc/p05.jpg" alt="Proyecto 5: Archivo oral — Memoria y democracia" loading="lazy">
+          </a>
+          <div class="vote-card__body">
+            <div class="vote-card__kicker">
+              <span class="badge">En votación</span>
+              <span class="chip">Memoria</span>
+            </div>
+            <h3 class="vote-card__title">
+              <a href="cofeuc-proyecto.html">Archivo oral — Memoria y democracia</a>
+            </h3>
+            <p class="vote-card__desc">Repositorio con testimonios y resguardo ético de datos.</p>
+            <div class="vote-card__meta">
+              <span>Sesión: 15/10</span>
+              <span>Mayoría simple</span>
+            </div>
+          </div>
+        </li>
+
+        <!-- Tarjeta 6 -->
+        <li class="vote-card">
+          <a class="vote-card__media" href="cofeuc-proyecto.html">
+            <img src="img/cofeuc/p06.jpg" alt="Proyecto 6: Campaña corresponsabilidad y cuidados" loading="lazy">
+          </a>
+          <div class="vote-card__body">
+            <div class="vote-card__kicker">
+              <span class="badge">En votación</span>
+              <span class="chip">Feminismo</span>
+            </div>
+            <h3 class="vote-card__title">
+              <a href="cofeuc-proyecto.html">Corresponsabilidad y cuidados</a>
+            </h3>
+            <p class="vote-card__desc">Flexibilidad académica y red de apoyo a cuidadoras/es.</p>
+            <div class="vote-card__meta">
+              <span>Sesión: 22/10</span>
+              <span>Mayoría simple</span>
+            </div>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Campaña BQj</small>
+      <a class="ig-card__mail" href="mailto:contacto@tu-campana.cl">✉ derecho@donde.cl</a>
+    </div>
+  </footer>
+
+  <!-- Si ya cargas app.js global, esto no es necesario duplicarlo -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+      const navToggle = document.querySelector('.nav-toggle');
+      const siteNav = document.getElementById('site-nav');
+      if (navToggle && siteNav){
+        navToggle.addEventListener('click', () => {
+          const open = siteNav.classList.toggle('open');
+          navToggle.setAttribute('aria-expanded', String(open));
+        });
+      }
+    });
+  </script>
+</body>
+</html>

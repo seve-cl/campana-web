@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Título del proyecto] — COFEUC</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cofeuc-proyecto.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./">
+        <img class="brand-logo" src="img/logo.png" alt="" width="36" height="36">
+        <span class="brand-name">Campaña</span>
+      </a>
+      <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false">Menú</button>
+      <nav id="site-nav" class="site-nav" aria-label="Principal">
+        <a href="./">Inicio</a>
+        <a href="index.html#proyectos">Proyectos</a>
+        <a href="index.html#calendario">Calendario</a>
+        <a href="cofeuc.html" aria-current="page">COFEUC</a>
+
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="hero-media">
+      <img src="img/banner.jpg" alt="Consejo de Federación de Estudiantes UC">
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="title">[Título del proyecto]</h1>
+        <p class="lead">Página de detalle — COFEUC</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenido del proyecto -->
+  <main class="section" aria-labelledby="proj-title">
+    <div class="container">
+      <article class="cof-proj">
+        <!-- Cabecera del proyecto -->
+        <header class="cof-proj__head">
+          <h2 id="proj-title">[Título del proyecto]</h2>
+          <div class="cof-proj__meta">
+            <span class="chip">Sesión: 03/10</span>
+            <span class="chip">Tipo: Mayoría simple</span>
+            <a class="btn primary" href="cofeuc.html">← Volver a COFEUC</a>
+          </div>
+        </header>
+
+        <!-- Imagen principal -->
+        <figure class="cof-proj__media media aspect-16x9">
+          <img src="img/cofeuc/p01.jpg" alt="[Descripción corta de la imagen]">
+        </figure>
+
+        <!-- Descripción / cuerpo -->
+        <section class="cof-proj__body narrow">
+          <h3>Descripción</h3>
+          <p>
+            [Reemplaza este texto con la descripción del proyecto: objetivo, alcance,
+            impactos y consideraciones. Puedes usar varios párrafos.]
+          </p>
+          <p>
+            [Agrega antecedentes y detalles técnicos, responsables y plazos si aplica.]
+          </p>
+        </section>
+
+        <!-- Bloque de votación de un/a candidato/a -->
+        <!-- Cambia la clase: vote--favor (verde) o vote--contra (rojo) -->
+        <aside class="cof-proj__vote vote-card vote--favor" aria-labelledby="vote-title">
+          <div class="vote-card__head">
+            <h3 id="vote-title">Voto de Agustín Burgos</h3>
+            <span class="vote-pill">A favor</span>
+          </div>
+          <div class="vote-card__body">
+            <h4>Justificación</h4>
+            <p>
+              [Justificación del Voto]
+            </p>
+          </div>
+        </aside>
+
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Campaña</small>
+      <a class="ig-card__mail" href="mailto:contacto@tu-campana.cl">✉ contacto@tu-campana.cl</a>
+    </div>
+  </footer>
+
+  <script>
+    // utilidades mínimas (opcional si ya lo cargas globalmente)
+    document.addEventListener('DOMContentLoaded', () => {
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+      const navToggle = document.querySelector('.nav-toggle');
+      const siteNav = document.getElementById('site-nav');
+      if (navToggle && siteNav){
+        navToggle.addEventListener('click', () => {
+          const open = siteNav.classList.toggle('open');
+          navToggle.setAttribute('aria-expanded', String(open));
+        });
+      }
+    });
+  </script>
+</body>
+</html>

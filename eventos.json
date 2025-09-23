@@ -1,0 +1,52 @@
+{
+  "eventos": [
+    {
+      "id": "ev-001",
+      "fecha": "2025-09-28",
+      "hora": "12:00",
+      "titulo": "Lanzamiento Eje Academia",
+      "lugar": "Patio Central",
+      "eje": "Academia",
+      "descripcion": "Breve presentación del eje y calendario de tutorías."
+    },
+    {
+      "id": "ev-002",
+      "fecha": "2025-09-28",
+      "hora": "15:30",
+      "titulo": "Clínica Jurídica en terreno",
+      "lugar": "Centro Comunitario",
+      "eje": "Aportemos a Chile y al mundo"
+    },
+    {
+      "id": "ev-003",
+      "fecha": "2025-09-30",
+      "titulo": "Taller de Pausa Activa",
+      "lugar": "Gimnasio",
+      "eje": "Salud y bienestar"
+    },
+    {
+      "id": "ev-004",
+      "fecha": "2025-10-02",
+      "hora": "09:00",
+      "titulo": "Banco de apuntes: sesión de contribución",
+      "lugar": "Sala 204",
+      "eje": "Academia"
+    },
+    {
+      "id": "ev-005",
+      "fecha": "2025-10-05",
+      "hora": "11:00",
+      "titulo": "Memoria y Democracia: archivo oral",
+      "lugar": "Biblioteca",
+      "eje": "Memoria y democracia"
+    },
+    {
+      "id": "ev-006",
+      "fecha": "2025-10-05",
+      "hora": "16:00",
+      "titulo": "Medio Ambiente: compostaje práctico",
+      "lugar": "Huerto",
+      "eje": "Medio Ambiente"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+/* ===== Página genérica de proyecto COFEUC ===== */
+
+/* Contenedor principal del proyecto */
+.cof-proj{
+  display:grid;
+  gap:18px;
+}
+
+/* Cabecera del proyecto */
+.cof-proj__head{
+  display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+  border-bottom:1px solid var(--border); padding-bottom:10px;
+}
+.cof-proj__head h2{
+  margin:0; font-weight:800; letter-spacing:.2px;
+}
+.cof-proj__meta{
+  display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+}
+
+/* Chips reutilizando estética */
+.chip{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:4px 10px; border-radius:999px; font-size:.85rem; font-weight:700;
+  color:var(--brand-ink); background:#fbfcfe; border:1px solid var(--border);
+}
+
+/* Imagen / media */
+.cof-proj__media{
+  background:#f5f7fb; border:1px solid var(--border); border-radius:14px; overflow:hidden;
+}
+
+/* Cuerpo de texto */
+.cof-proj__body h3{ margin-top:0; }
+.cof-proj__body p{ margin:0 0 10px 0; color:var(--text); }
+.cof-proj__body{ display:grid; gap:10px; }
+
+/* Tarjeta de voto (estado y justificación) */
+.vote-card{
+  background:#fff; border:1px solid var(--border); border-radius:18px;
+  box-shadow:var(--shadow); overflow:hidden; display:grid; gap:0;
+}
+
+/* Encabezado de voto */
+.vote-card__head{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:14px 16px; border-bottom:1px solid var(--border);
+}
+.vote-card__head h3{ margin:0; font-weight:800; }
+
+/* Pastilla de estado (A favor / En contra) */
+.vote-pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:6px 12px; border-radius:999px; font-weight:800; font-size:.9rem;
+  color:#fff; background:linear-gradient(90deg, var(--brand), var(--brand-2));
+}
+
+/* Cuerpo de la tarjeta */
+.vote-card__body{
+  padding:14px 16px; display:grid; gap:8px; background:#fff;
+}
+.vote-card__body h4{ margin:4px 0 0 0; }
+
+/* Estados: cambia solo la clase en el aside para verde o rojo */
+.vote--favor .vote-pill{
+  background:linear-gradient(90deg, #0fbf7e, #27d39f); /* verde */
+}
+.vote--contra .vote-pill{
+  background:linear-gradient(90deg, #ff6b6b, #ff8e8e); /* rojo */
+}
+
+.vote--favor{
+  border-left:4px solid #16c98a;
+}
+.vote--contra{
+  border-left:4px solid #ff6b6b;
+}
+
+/* Responsive */
+@media (max-width: 720px){
+  .cof-proj__head{
+    flex-direction:column; align-items:flex-start; gap:8px;
+  }
+}
