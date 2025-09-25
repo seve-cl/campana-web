@@ -168,7 +168,7 @@ async function initCalendar(){
   // Cargar eventos desde JSON
   let events = [];
   try{
-    const res = await fetch('eventos.json', { cache: 'no-store' });
+    const res = await fetch('eventos.https://script.google.com/macros/s/AKfycby2gZYH2cX6Hwf5D0H9EgC8sRNArwO4CcmLTPkQxyyO9qdYXTb-WUSvydCs8wtCC47HTQ/exec', { cache: 'no-store' });
     if(!res.ok) throw new Error('HTTP '+res.status);
     const data = await res.json();
     events = (data?.eventos || []);
