@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Campaña — BQj</title>
-  <meta name="description" content="Sitio oficial de la campaña BQj." />
+  <title>Campaña — AgusCT</title>
+  <meta name="description" content="Sitio oficial de la campaña de AgusCT." />
   <link rel="icon" href="img/logo.png" />
   <link rel="preload" href="styles.css" as="style" />
   <link rel="stylesheet" href="styles.css" />
@@ -14,107 +14,34 @@
   <!-- Header fijo con logo y navegación -->
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Inicio">
-        <!-- Espacio para logo (reemplaza logo.png por tu archivo) -->
+      <a class="brand" href="index.html" aria-label="Inicio">
         <img src="img/logo.png" alt="Logo de la campaña" width="40" height="40" class="brand-logo" />
-        <span class="brand-name">Campaña BQj</span>
+        <span class="brand-name">AgusCT Derecho</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menú</button>
-    <nav id="site-nav" class="site-nav" aria-label="Principal">
-      <a href="#presentacion">Presentación</a>
-      <a href="#progreso">Progreso</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#galeria">Galería</a>
-      <a href="#contacto">Contacto</a>
-      <a href="cofeuc.html">COFEUC</a>
-    </nav>
-
+      <nav id="site-nav" class="site-nav" aria-label="Principal">
+        <a href="#presentacion">Presentación</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="https://noviolenciaydiscriminacion.uc.cl/protocolos-y-lineamientos/">Protocolos</a>
+        <a href="cofeuc.html">Votaciones</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Banner principal con imagen amplia y lema -->
+  <!-- Banner principal -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-media" role="img" aria-label="Banner de la campaña con imagen destacada">
-      <!-- Reemplaza banner.jpg por tu imagen -->
       <img src="img/banner.jpg" alt="Banner principal de la campaña" loading="lazy" />
     </div>
     <div class="container hero-content">
       <h1 id="hero-title">Transparencia y avance medible</h1>
       <p class="lead">Sigue en tiempo real cómo se cumplen los proyectos de la campaña.</p>
-      <a class="btn primary" href="#progreso">Ver avance</a>
     </div>
   </section>
 
   <main>
-<section id="presentacion" class="section section-video" aria-labelledby="presentacion-title">
-  <div class="container">
-    <header class="section-head">
-      <h2 id="presentacion-title">Video de presentación</h2>
-      <p>Conoce la campaña en 60 segundos.</p>
-    </header>
-
-    <article class="video-card">
-      <div class="video-embed aspect-16x9">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/gO8N3L_aERg"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- Calendario -->
-<section id="calendario" class="section" aria-labelledby="cal-title">
-  <div class="container">
-    <header class="section-head">
-      <h2 id="cal-title">Calendario</h2>
-    </header>
-
-    <div class="calendar card">
-      <div class="cal-header">
-        <h3 class="cal-month" id="cal-month-label">—</h3>
-        <div class="cal-nav">
-          <button data-cal-prev aria-label="Mes anterior">←</button>
-          <button data-cal-today aria-label="Ir a hoy">Hoy</button>
-          <button data-cal-next aria-label="Mes siguiente">→</button>
-        </div>
-      </div>
-
-      <div class="cal-grid" role="grid" aria-labelledby="cal-month-label">
-        <div class="cal-weekdays" role="row">
-          <span class="cal-wd" role="columnheader">Lun</span>
-          <span class="cal-wd" role="columnheader">Mar</span>
-          <span class="cal-wd" role="columnheader">Mié</span>
-          <span class="cal-wd" role="columnheader">Jue</span>
-          <span class="cal-wd" role="columnheader">Vie</span>
-          <span class="cal-wd" role="columnheader">Sáb</span>
-          <span class="cal-wd" role="columnheader">Dom</span>
-        </div>
-        <div class="cal-days" role="rowgroup" id="cal-days"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Modal de eventos del día -->
-<div class="cal-modal" id="cal-modal" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="cal-modal__dialog" role="document">
-    <button class="cal-modal__close" id="cal-modal-close" aria-label="Cerrar">×</button>
-    <h3 class="cal-modal__title" id="cal-modal-date">—</h3>
-    <ul class="cal-modal__list" id="cal-modal-list"></ul>
-  </div>
-</div>
-
-
-
-    <!-- Bloque central: barra de progreso global -->
+    <!-- Progreso global -->
     <section id="progreso" class="section" aria-labelledby="progreso-title">
       <div class="container">
         <header class="section-head">
@@ -129,259 +56,112 @@
       </div>
     </section>
 
-    <!-- Proyectos (cada uno con checkbox + imagen + peso) -->
-<section id="proyectos" class="section" aria-labelledby="proyectos-title">
-  <div class="container">
-    <header class="section-head">
-      <h2 id="proyectos-title">Proyectos por eje</h2>
-    </header>
-
-    <ol class="grid projects" id="projects-list">
-
-      <!-- 1) Que no falte patio -->
-      <li class="card project" data-id="p01" data-axis="Que no falte patio" data-weight="12">
-        <figure class="media aspect-16x9">
-          <img src="img/e01_p1.jpg" alt="Recuperación de patios y áreas verdes" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Que no falte patio</span>
-          <h3 class="title">E01-P1 — Recuperación de patios</h3>
-          <p>Plan de mantención y activación de áreas verdes, con jornadas de limpieza y señalética de cuidado.</p>
-        </div>
-      </li>
-      <li class="card project" data-id="p02" data-axis="Que no falte patio" data-weight="10">
-        <figure class="media aspect-16x9">
-          <img src="img/e01_p2.jpg" alt="Sombra y mobiliario exterior" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Que no falte patio</span>
-          <h3 class="title">E01-P2 — Sombra y mobiliario</h3>
-          <p>Instalación de toldos, bancos y mesas modulares para estudio y convivencia al aire libre.</p>
-        </div>
-      </li>
-
-      <!-- 2) Salud Mental -->
-      <li class="card project" data-id="p03" data-axis="Salud Mental" data-weight="20">
-        <figure class="media aspect-16x9">
-          <img src="img/e02_p1.jpg" alt="Red de Primer Apoyo en salud mental" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Salud Mental</span>
-          <h3 class="title">E02-P1 — Red de Primer Apoyo</h3>
-          <p>Capacitación de estudiantes y docentes como primeros respondientes; derivación temprana y protocolos.</p>
-        </div>
-      </li>
-      <li class="card project" data-id="p04" data-axis="Salud Mental" data-weight="16">
-        <figure class="media aspect-16x9">
-          <img src="img/e02_p2.jpg" alt="Atención breve y talleres psicoeducativos" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Salud Mental</span>
-          <h3 class="title">E02-P2 — Atención breve</h3>
-          <p>Consultas breves gratuitas y talleres de manejo de estrés, sueño y organización académica.</p>
-        </div>
-      </li>
-
-      <!-- 3) Memoria y democracia -->
-      <li class="card project" data-id="p05" data-axis="Memoria y democracia" data-weight="14">
-        <figure class="media aspect-16x9">
-          <img src="img/e03_p1.jpg" alt="Archivo Oral Estudiantil" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Memoria y democracia</span>
-          <h3 class="title">E03-P1 — Archivo Oral</h3>
-          <p>Levantamiento de testimonios y documentos estudiantiles; repositorio abierto con curaduría básica.</p>
-        </div>
-      </li>
-      <li class="card project" data-id="p06" data-axis="Memoria y democracia" data-weight="12">
-        <figure class="media aspect-16x9">
-          <img src="img/e03_p2.jpg" alt="Ciclo de educación cívica" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Memoria y democracia</span>
-          <h3 class="title">E03-P2 — Educación cívica</h3>
-          <p>Charlas y simulaciones deliberativas sobre instituciones, participación y derechos fundamentales.</p>
-        </div>
-      </li>
-
-      <!-- 4) Aportemos a Chile y al mundo -->
-      <li class="card project" data-id="p07" data-axis="Aportemos a Chile y al mundo" data-weight="18">
-        <figure class="media aspect-16x9">
-          <img src="img/e04_p1.jpg" alt="Clínicas jurídicas en terreno" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Aportemos a Chile y al mundo</span>
-          <h3 class="title">E04-P1 — Clínicas en terreno</h3>
-          <p>Asesoría jurídica comunitaria itinerante con supervisión académica y alianzas municipales.</p>
-        </div>
-      </li>
-      <li class="card project" data-id="p08" data-axis="Aportemos a Chile y al mundo" data-weight="14">
-        <figure class="media aspect-16x9">
-          <img src="img/e04_p2.jpg" alt="Programa pro bono e informes en derecho comparado" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Aportemos a Chile y al mundo</span>
-          <h3 class="title">E04-P2 — Pro bono e informes</h3>
-          <p>Red de causas pro bono y elaboración de amicus/informes comparados con impacto público.</p>
-        </div>
-      </li>
-
-      <!-- 5) Salud y bienestar -->
-      <li class="card project" data-id="p09" data-axis="Salud y bienestar" data-weight="12">
-        <figure class="media aspect-16x9">
-          <img src="img/e05_p1.jpg" alt="Pausa activa y deporte libre" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Salud y bienestar</span>
-          <h3 class="title">E05-P1 — Pausa activa</h3>
-          <p>Bloques semanales de actividad física libre, préstamo de implementos y torneos recreativos.</p>
-        </div>
-      </li>
-      <li class="card project" data-id="p10" data-axis="Salud y bienestar" data-weight="10">
-        <figure class="media aspect-16x9">
-          <img src="img/e05_p2.jpg" alt="Menú saludable accesible en campus" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Salud y bienestar</span>
-          <h3 class="title">E05-P2 — Menú saludable</h3>
-          <p>Oferta de menús a precio protegido, rotulación nutricional simple y puntos de hidratación.</p>
-        </div>
-      </li>
-
-      <!-- 6) Academia -->
-      <li class="card project" data-id="p11" data-axis="Academia" data-weight="20">
-        <figure class="media aspect-16x9">
-          <img src="img/e06_p1.jpg" alt="Banco de apuntes abierto y responsable" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Academia</span>
-          <h3 class="title">E06-P1 — Banco de apuntes</h3>
-          <p>Repositorio abierto y versionado de apuntes, con criterios de calidad y citas adecuadas.</p>
-        </div>
-      </li>
-      <li class="card project" data-id="p12" data-axis="Academia" data-weight="16">
-        <figure class="media aspect-16x9">
-          <img src="img/e06_p2.jpg" alt="Tutorías entre pares con reconocimiento académico" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Academia</span>
-          <h3 class="title">E06-P2 — Tutorías entre pares</h3>
-          <p>Programa de tutores pares con seguimiento, rúbricas y posibilidad de reconocimiento en créditos.</p>
-        </div>
-      </li>
-
-      <!-- 7) Apoyémonos -->
-      <li class="card project" data-id="p13" data-axis="Apoyémonos" data-weight="18">
-        <figure class="media aspect-16x9">
-          <img src="img/e07_p1.jpg" alt="Fondo de emergencia estudiantil" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Apoyémonos</span>
-          <h3 class="title">E07-P1 — Fondo de emergencia</h3>
-          <p>Apoyo rápido y transparente para contingencias económicas, con rendición y comité mixto.</p>
-        </div>
-      </li>
-      <li class="card project" data-id="p14" data-axis="Apoyémonos" data-weight="12">
-        <figure class="media aspect-16x9">
-          <img src="img/e07_p2.jpg" alt="Bolsa de empleos y mentorías" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Apoyémonos</span>
-          <h3 class="title">E07-P2 — Empleos y mentorías</h3>
-          <p>Plataforma de trabajos part-time, pasantías y red de mentores egresados por áreas.</p>
-        </div>
-      </li>
-
-      <!-- 8) Disidencias -->
-      <li class="card project" data-id="p15" data-axis="Disidencias" data-weight="14">
-        <figure class="media aspect-16x9">
-          <img src="img/e08_p1.jpg" alt="Protocolo y acompañamiento a identidades diversas" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Disidencias</span>
-          <h3 class="title">E08-P1 — Acompañamiento</h3>
-          <p>Ruta clara de acompañamiento, nombre social y resguardo de datos; coordinación con unidades UC.</p>
-        </div>
-      </li>
-      <li class="card project" data-id="p16" data-axis="Disidencias" data-weight="12">
-        <figure class="media aspect-16x9">
-          <img src="img/e08_p2.jpg" alt="Formación en respeto y no discriminación" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Disidencias</span>
-          <h3 class="title">E08-P2 — Formación en respeto</h3>
-          <p>Talleres y campañas permanentes contra la discriminación; canales de denuncia accesibles.</p>
-        </div>
-      </li>
-
-      <!-- 9) Feminismo -->
-      <li class="card project" data-id="p17" data-axis="Feminismo" data-weight="18">
-        <figure class="media aspect-16x9">
-          <img src="img/e09_p1.jpg" alt="Prevención y acompañamiento en violencias" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Feminismo</span>
-          <h3 class="title">E09-P1 — Prevención y apoyo</h3>
-          <p>Prevención de violencias de género, acompañamiento jurídico-psicológico y articulación con protocolos.</p>
-        </div>
-      </li>
-      <li class="card project" data-id="p18" data-axis="Feminismo" data-weight="12">
-        <figure class="media aspect-16x9">
-          <img src="img/e09_p2.jpg" alt="Red de corresponsabilidad y cuidados" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Feminismo</span>
-          <h3 class="title">E09-P2 — Corresponsabilidad</h3>
-          <p>Red de apoyo a cuidadoras/es, mecanismos de flexibilidad académica y talleres de corresponsabilidad.</p>
-        </div>
-      </li>
-
-      <!-- 10) Medio Ambiente -->
-      <li class="card project" data-id="p19" data-axis="Medio Ambiente" data-weight="16">
-        <figure class="media aspect-16x9">
-          <img src="img/e10_p1.jpg" alt="Basura cero y reciclaje" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Medio Ambiente</span>
-          <h3 class="title">E10-P1 — Basura cero</h3>
-          <p>Puntos limpios, reducción de desechables y medición de huella con reportes trimestrales.</p>
-        </div>
-      </li>
-      <li class="card project" data-id="p20" data-axis="Medio Ambiente" data-weight="14">
-        <figure class="media aspect-16x9">
-          <img src="img/e10_p2.jpg" alt="Huerto y compostaje en campus" loading="lazy" />
-        </figure>
-        <div class="card-body">
-          <span class="axis-tag">Medio Ambiente</span>
-          <h3 class="title">E10-P2 — Huerto y compost</h3>
-          <p>Huerto comunitario, composteras y talleres de economía circular con evaluación semestral.</p>
-        </div>
-      </li>
-
-    </ol>
-  </div>
-</section>
-
-    <!-- Galería amplia (espacios para imágenes) -->
-    <section id="galeria" class="section" aria-labelledby="galeria-title">
+    <!-- Presentación (video) -->
+    <section id="presentacion" class="section section-video" aria-labelledby="presentacion-title">
       <div class="container">
         <header class="section-head">
-          <h2 id="galeria-title">Galería de la campaña</h2>
-          <p>Momentos clave, actividades y material gráfico del equipo.</p>
+          <h2 id="presentacion-title">Video de presentación</h2>
+          <p>Conoce la campaña en 60 segundos.</p>
+        </header>
+
+        <article class="video-card">
+          <div class="video-embed aspect-16x9">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/gO8N3L_aERg"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Calendario -->
+    <section id="calendario" class="section" aria-labelledby="cal-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="cal-title">Calendario</h2>
+        </header>
+
+        <div class="calendar card">
+          <div class="cal-header">
+            <h3 class="cal-month" id="cal-month-label">—</h3>
+            <div class="cal-nav">
+              <button data-cal-prev aria-label="Mes anterior">←</button>
+            
+              <button data-cal-next aria-label="Mes siguiente">→</button>
+            </div>
+          </div>
+
+          <div class="cal-grid" role="grid" aria-labelledby="cal-month-label">
+            <div class="cal-weekdays" role="row">
+              <span class="cal-wd" role="columnheader">Lun</span>
+              <span class="cal-wd" role="columnheader">Mar</span>
+              <span class="cal-wd" role="columnheader">Mié</span>
+              <span class="cal-wd" role="columnheader">Jue</span>
+              <span class="cal-wd" role="columnheader">Vie</span>
+              <span class="cal-wd" role="columnheader">Sáb</span>
+              <span class="cal-wd" role="columnheader">Dom</span>
+            </div>
+            <div class="cal-days" role="rowgroup" id="cal-days"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Perfil del candidato (nuevo bloque bajo calendario) -->
+    <section id="candidato" class="section" aria-labelledby="candidato-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="candidato-title">Sobre el candidato</h2>
+        </header>
+
+        <article class="card candidate">
+          <figure class="candidate__media">
+            <!-- Reemplaza por tu imagen real -->
+            <img src="img/candidato.jpg" alt="Fotografía del candidato" loading="lazy" />
+          </figure>
+          <div class="candidate__body">
+            <h3 class="candidate__headline">Compromiso, claridad y gestión</h3>
+            <p class="candidate__lead">
+              Esta candidatura nace para ordenar, escuchar y ejecutar. Nuestro foco es
+              mejorar la vida universitaria con medidas concretas: bienestar, participación,
+              transparencia y trabajo con resultados visibles.
+            </p>
+            <ul class="candidate__bullets">
+              <li>Plan de 100 días con hitos medibles y seguimiento público.</li>
+              <li>Espacios seguros y campus activos: salud mental, deporte y cultura.</li>
+              <li>Puentes con escuelas, centros de estudiantes y comunidad UC.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Noticias (antes: Galería) -->
+    <section id="noticias" class="section" aria-labelledby="noticias-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="noticias-title">Noticias</h2>
         </header>
         <div class="grid gallery">
-          <figure class="media aspect-1x1"><img src="img/g01.jpg" alt="Imagen 1" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g02.jpg" alt="Imagen 2" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g03.jpg" alt="Imagen 3" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g04.jpg" alt="Imagen 4" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g05.jpg" alt="Imagen 5" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g06.jpg" alt="Imagen 6" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g07.jpg" alt="Imagen 7" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g08.jpg" alt="Imagen 8" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g09.jpg" alt="Imagen 9" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g10.jpg" alt="Imagen 10" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g11.jpg" alt="Imagen 11" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g12.jpg" alt="Imagen 12" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g01.jpg" alt="Noticia 1" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g02.jpg" alt="Noticia 2" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g03.jpg" alt="Noticia 3" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g04.jpg" alt="Noticia 4" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g05.jpg" alt="Noticia 5" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g06.jpg" alt="Noticia 6" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g07.jpg" alt="Noticia 7" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g08.jpg" alt="Noticia 8" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g09.jpg" alt="Noticia 9" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g10.jpg" alt="Noticia 10" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g11.jpg" alt="Noticia 11" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g12.jpg" alt="Noticia 12" loading="lazy" /></figure>
         </div>
       </div>
     </section>
@@ -394,62 +174,57 @@
       </div>
     </section>
 
-<section id="contacto" class="section" aria-labelledby="contacto-title">
-  <div class="container narrow">
-    <h2 id="contacto-title">Contacto y redes</h2>
+    <!-- Contacto y redes -->
+    <section id="contacto" class="section" aria-labelledby="contacto-title">
+      <div class="container narrow">
+        <h2 id="contacto-title">Contacto y redes</h2>
 
-    <article class="ig-card" aria-label="Instagram y contacto de la campaña">
-      <!-- Cabecera IG -->
-      <header class="ig-card__head">
-        <div class="ig-card__brand">
-          <img class="ig-card__icon" src="img/instagram.png" alt="" width="28" height="28">
-          <div class="ig-card__text">
-            <a class="ig-card__handle" href="https://instagram.com/agusbq_/" target="_blank" rel="noopener">@agusbq_</a>
-            <span class="ig-card__sub">Instagram oficial de la campaña</span>
+        <article class="ig-card" aria-label="Instagram y contacto de la campaña">
+          <!-- Cabecera IG -->
+          <header class="ig-card__head">
+            <div class="ig-card__brand">
+              <img class="ig-card__icon" src="img/instagram.png" alt="" width="28" height="28">
+              <div class="ig-card__text">
+                <a class="ig-card__handle" href="https://instagram.com/agusct_derecho/" target="_blank" rel="noopener">@agusct_derecho</a>
+              </div>
+            </div>
+          </header>
+
+          <!-- Embeds (uniformes) -->
+          <div class="ig-card__grid" id="ig-feed">
+            <div class="ig-embed ig-card__item">
+              <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/p/DMWGvzavLUI/"
+                data-instgrm-version="14"></blockquote>
+            </div>
+            <div class="ig-embed ig-card__item">
+              <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/p/DFjmoWUg2aQ/"
+                data-instgrm-version="14"></blockquote>
+            </div>
+            <div class="ig-embed ig-card__item">
+              <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/p/DFW5SbJgYKX/"
+                data-instgrm-version="14"></blockquote>
+            </div>
           </div>
-        </div>
-        <a class="btn primary ig-card__cta" href="https://instagram.com/agusbq_/" target="_blank" rel="noopener">Abrir Instagram</a>
-      </header>
 
-  <!-- Mini feed con publicaciones de Instagram (uniforme) -->
-<div class="ig-card__grid" id="ig-feed">
+          <!-- Cárgalo una sola vez al final del <body> -->
+          <script async src="//www.instagram.com/embed.js"></script>
 
-  <div class="ig-embed ig-card__item">
-    <blockquote class="instagram-media"
-      data-instgrm-permalink="https://www.instagram.com/p/DMWGvzavLUI/"
-      data-instgrm-version="14"></blockquote>
-  </div>
-
-  <div class="ig-embed ig-card__item">
-    <blockquote class="instagram-media"
-      data-instgrm-permalink="https://www.instagram.com/p/DFjmoWUg2aQ/"
-      data-instgrm-version="14"></blockquote>
-  </div>
-
-  <div class="ig-embed ig-card__item">
-    <blockquote class="instagram-media"
-      data-instgrm-permalink="https://www.instagram.com/p/DFW5SbJgYKX/"
-      data-instgrm-version="14"></blockquote>
-  </div>
-
-</div>
-
-<!-- Cárgalo una sola vez al final del <body> -->
-<script async src="//www.instagram.com/embed.js"></script>
-  
-      <!-- Línea de contacto -->
-      <footer class="ig-card__foot">
-        <a class="ig-card__mail" href="mailto:equipo@campania.bqj">✉ derecho@donde.bqj</a>
-      </footer>
-    </article>
-  </div>
-</section>
-
+          <!-- Línea de contacto -->
+          <footer class="ig-card__foot">
+            <a class="ig-card__mail" href="mailto:agusctderecho@gmail.com">✉ agusctderecho@gmail.com</a>
+          </footer>
+        </article>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <small>© <span id="year">2025</span> Campaña BQj. Todos los derechos reservados.</small>
+      <small>© <span id="year">2025</span> AgusCT. Todos los derechos reservados.</small>
       <a class="btn primary" href="#top">Volver arriba</a>
     </div>
   </footer>

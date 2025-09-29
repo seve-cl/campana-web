@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyectos — AgusCT</title>
+  <meta name="description" content="Proyectos por eje de la campaña AgusCT." />
+  <link rel="icon" href="img/logo.png" />
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="proyectos.css" />
+  <script src="app.js" defer></script>
+  <script src="proyectos.js" defer></script>
+</head>
+<body>
+  <!-- Header fijo con logo y navegación -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="index.html#top" aria-label="Inicio">
+        <img src="img/logo.png" alt="Logo de la campaña" width="40" height="40" class="brand-logo" />
+        <span class="brand-name">AgusCT</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menú</button>
+      <nav id="site-nav" class="site-nav" aria-label="Principal">
+        <a href="index.html#presentacion">Presentación</a>
+        <a href="proyectos.html" aria-current="page">Proyectos</a>
+        <a href="https://noviolenciaydiscriminacion.uc.cl/protocolos-y-lineamientos/">Protocolos</a>
+        <a href="cofeuc.html">Votaciones</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Banner de Proyectos -->
+    <section class="hero" aria-labelledby="hero-proyectos">
+      <div class="hero-media" role="img" aria-label="Banner de proyectos de la campaña">
+        <img src="img/banner.jpg" alt="Banner de proyectos de la campaña" loading="lazy" />
+      </div>
+      <div class="container hero-content">
+        <h1 id="hero-proyectos">Proyectos</h1>
+        <p class="lead">Explora cada eje y conoce las propuestas que impulsamos para nuestra facultad.</p>
+      </div>
+    </section>
+
+    <!-- ===== EJE: NO + DISCRIMINACIÓN ===== -->
+    <section class="section" id="eje-no-discriminacion" aria-labelledby="h-no-discriminacion">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="h-no-discriminacion">No + Discriminación en nuestra comunidad</h2>
+          <span class="btn primary" role="status" aria-label="Eje activo: No + Discriminación">Eje: No + Discriminación</span>
+        </header>
+
+        <div class="axis-block">
+          <figure class="axis-media aspect-16x9">
+            <img src="img/axis-no-discriminacion.jpg" alt="Campaña contra la discriminación en Derecho UC" loading="lazy" />
+          </figure>
+
+          <ol class="axis-list" id="projects-list">
+            <li class="proj-item" data-id="p1">
+              <div class="proj-head">
+                <h3 class="proj-title">Ni etiquetas, somos personas</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">
+                Afiches con testimonios reales sobre discriminación por origen, situación socioeconómica, residencia, identidad,
+                apariencia o creencias. Carta de dirigencias al Decano para una mesa tripartita con plazo y medidas concretas.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EJE: SALUD Y BIENESTAR ===== -->
+    <section class="section" id="eje-salud-bienestar" aria-labelledby="h-salud-bienestar">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="h-salud-bienestar">Salud y bienestar</h2>
+          <span class="btn primary">Eje: Salud y bienestar</span>
+        </header>
+
+        <div class="axis-block">
+          <figure class="axis-media aspect-16x9">
+            <img src="img/axis-salud.jpg" alt="Actividades y bienestar estudiantil" loading="lazy" />
+          </figure>
+
+          <ol class="axis-list">
+            <li class="proj-item" data-id="p2">
+              <div class="proj-head">
+                <h3 class="proj-title">Gym para Casa Central</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Petición formal con CT y centros de estudiantes del campus (coordinada con FEUC) al Rector para iniciar instalación.</p>
+            </li>
+            <li class="proj-item" data-id="p3">
+              <div class="proj-head">
+                <h3 class="proj-title">Bailemos</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Clases vespertinas definidas por formulario. Dos ciclos al año (4 clases/mes). Financiamiento vía rifas.</p>
+            </li>
+            <li class="proj-item" data-id="p4">
+              <div class="proj-head">
+                <h3 class="proj-title">Prevención de ETS</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Alianza con fundación para entrega gratuita de preservativos al menos una vez por semestre.</p>
+            </li>
+            <li class="proj-item" data-id="p5">
+              <div class="proj-head">
+                <h3 class="proj-title">Actuemos a tiempo</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Material audiovisual (DAE) sobre primeros auxilios físicos/psicológicos y repertorio de ayudas de salud mental. Formación básica para ayudantes.</p>
+            </li>
+            <li class="proj-item" data-id="p6">
+              <div class="proj-head">
+                <h3 class="proj-title">Voces de salud mental</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Recolección anónima y periódica de experiencias; exhibición responsable para sensibilizar.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EJE: FEMINISMO ===== -->
+    <section class="section" id="eje-feminismo" aria-labelledby="h-feminismo">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="h-feminismo">Feminismo</h2>
+          <span class="btn primary">Eje: Feminismo</span>
+        </header>
+
+        <div class="axis-block">
+          <figure class="axis-media aspect-16x9">
+            <img src="img/axis-feminismo.jpg" alt="Acciones y contenidos con perspectiva de género" loading="lazy" />
+          </figure>
+
+          <ol class="axis-list">
+            <li class="proj-item" data-id="p7">
+              <div class="proj-head">
+                <h3 class="proj-title">Marzo feminista</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Grupo de mujeres organiza 8M y mantiene iniciativas (radioteatro, catálogo de derechos, revista digital) todo el periodo.</p>
+            </li>
+            <li class="proj-item" data-id="p8">
+              <div class="proj-head">
+                <h3 class="proj-title">El Derecho es con nosotras presentes</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Tres actividades con conversatorios/paneles para visibilizar trabajos de abogadas y proponer mejoras.</p>
+            </li>
+            <li class="proj-item" data-id="p9">
+              <div class="proj-head">
+                <h3 class="proj-title">Las mujeres se toman la consejería</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Espacio para crear contenido audiovisual sobre machismos y micromachismos; educación a la comunidad.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EJE: MEMORIA, DEMOCRACIA Y DDHH ===== -->
+    <section class="section" id="eje-memoria" aria-labelledby="h-memoria">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="h-memoria">Memoria, democracia y DDHH</h2>
+          <span class="btn primary">Eje: Memoria, democracia y DDHH</span>
+        </header>
+
+        <div class="axis-block">
+          <figure class="axis-media aspect-16x9">
+            <img src="img/axis-memoria.jpg" alt="Conmemoraciones, diálogo y defensa de derechos" loading="lazy" />
+          </figure>
+
+          <ol class="axis-list">
+            <li class="proj-item" data-id="p10">
+              <div class="proj-head">
+                <h3 class="proj-title">Septiembre es memoria</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Conmemoración con música, teatro, artes visuales y cueca sola; convocatoria interdisciplinaria.</p>
+            </li>
+            <li class="proj-item" data-id="p11">
+              <div class="proj-head">
+                <h3 class="proj-title">Puentes de visiones</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Cuatro diálogos sobre democracia y DDHH con moderación y documento de consensos por sesión.</p>
+            </li>
+            <li class="proj-item" data-id="p12">
+              <div class="proj-head">
+                <h3 class="proj-title">Defendamos la gratuidad</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Espacio seguro de organización, paneles abiertos y contenidos para defender la gratuidad universitaria.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EJE: DISIDENCIAS ===== -->
+    <section class="section" id="eje-disidencias" aria-labelledby="h-disidencias">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="h-disidencias">Disidencias</h2>
+          <span class="btn primary">Eje: Disidencias</span>
+        </header>
+
+        <div class="axis-block">
+          <figure class="axis-media aspect-16x9">
+            <img src="img/axis-disidencias.jpg" alt="Diversidad y respeto en la comunidad" loading="lazy" />
+          </figure>
+
+          <ol class="axis-list">
+            <li class="proj-item" data-id="p13">
+              <div class="proj-head">
+                <h3 class="proj-title">Academia disidente</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Grupo de estudio sobre filosofía queer y desarrollo jurídico; debate y difusión de aprendizajes.</p>
+            </li>
+            <li class="proj-item" data-id="p14">
+              <div class="proj-head">
+                <h3 class="proj-title">Voces del Orgullo</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Recopilación anónima en mayo y publicación diaria en junio; cierre con conversatorio.</p>
+            </li>
+            <li class="proj-item" data-id="p15">
+              <div class="proj-head">
+                <h3 class="proj-title">Charlas para junio</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Cuatro charlas: avances legales, liderazgos disidentes, discursos de odio y memoria disidente.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EJE: QUE NO FALTE PATIO ===== -->
+    <section class="section" id="eje-patio" aria-labelledby="h-patio">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="h-patio">Que no falte patio</h2>
+          <span class="btn primary">Eje: Que no falte patio</span>
+        </header>
+
+        <div class="axis-block">
+          <figure class="axis-media aspect-16x9">
+            <img src="img/axis-patio.jpg" alt="Vida universitaria en patios y espacios comunes" loading="lazy" />
+          </figure>
+
+          <ol class="axis-list">
+            <li class="proj-item" data-id="p16">
+              <div class="proj-head">
+                <h3 class="proj-title">Destaca</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Caja de destacadores comunitarios en zonas de estudio. Reposición bimestral con aportes voluntarios.</p>
+            </li>
+            <li class="proj-item" data-id="p17">
+              <div class="proj-head">
+                <h3 class="proj-title">Almorcemos</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Almuerzos mensuales abiertos, autogestionados o con cuota voluntaria. Temáticas para fomentar comunidad.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EJE: ROMPAMOS LA BURBUJA ===== -->
+    <section class="section" id="eje-burbuja" aria-labelledby="h-burbuja">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="h-burbuja">Rompamos la burbuja</h2>
+          <span class="btn primary">Eje: Rompamos la burbuja</span>
+        </header>
+
+        <div class="axis-block">
+          <figure class="axis-media aspect-16x9">
+            <img src="img/axis-burbuja.jpg" alt="Trabajo con comunidades y vinculación social" loading="lazy" />
+          </figure>
+
+          <ol class="axis-list">
+            <li class="proj-item" data-id="p18">
+              <div class="proj-head">
+                <h3 class="proj-title">Recolección de juguetes</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Campaña segundo semestre; selección y entrega en jardines vulnerables cerca de Navidad.</p>
+            </li>
+            <li class="proj-item" data-id="p19">
+              <div class="proj-head">
+                <h3 class="proj-title">Derecho en tu plaza</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Jornadas de orientación jurídica con equipos formados; ejecución en 1º y 2º semestre 2026.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EJE: ACADEMIA ===== -->
+    <section class="section" id="eje-academia" aria-labelledby="h-academia">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="h-academia">Academia</h2>
+          <span class="btn primary">Eje: Academia</span>
+        </header>
+
+        <div class="axis-block">
+          <figure class="axis-media aspect-16x9">
+            <img src="img/axis-academia.jpg" alt="Vida académica y formación" loading="lazy" />
+          </figure>
+
+          <ol class="axis-list">
+            <li class="proj-item" data-id="p20">
+              <div class="proj-head">
+                <h3 class="proj-title">Podcast académico</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Entrevistas a académicas/os sobre trayectorias, vocaciones y caminos hacia la academia.</p>
+            </li>
+            <li class="proj-item" data-id="p21">
+              <div class="proj-head">
+                <h3 class="proj-title">Amanecer del año</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Feria de libros/códigos y venta solidaria de trajes; sorteo de gift cards de librerías jurídicas.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EJE: MEDIOAMBIENTE ===== -->
+    <section class="section" id="eje-medioambiente" aria-labelledby="h-medioambiente">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="h-medioambiente">Medioambiente</h2>
+          <span class="btn primary">Eje: Medioambiente</span>
+        </header>
+
+        <div class="axis-block">
+          <figure class="axis-media aspect-16x9">
+            <img src="img/axis-medioambiente.jpg" alt="Sustentabilidad y cuidado del entorno" loading="lazy" />
+          </figure>
+
+          <ol class="axis-list">
+            <li class="proj-item" data-id="p22">
+              <div class="proj-head">
+                <h3 class="proj-title">Reciclaje de apuntes</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Colectas mensuales/bimestrales de papel; entrega en puntos de reciclaje y reconocimiento a quienes más aporten.</p>
+            </li>
+            <li class="proj-item" data-id="p23">
+              <div class="proj-head">
+                <h3 class="proj-title">Patio vivo</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Divulgación visual sobre biodiversidad de los patios: flora, aves y especies presentes.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EJE: APOYÉMONOS ===== -->
+    <section class="section" id="eje-apoyemonos" aria-labelledby="h-apoyemonos">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="h-apoyemonos">Apoyémonos</h2>
+          <span class="btn primary">Eje: Apoyémonos</span>
+        </header>
+
+        <div class="axis-block">
+          <figure class="axis-media aspect-16x9">
+            <img src="img/axis-apoyemonos.jpg" alt="Redes de apoyo y acompañamiento estudiantil" loading="lazy" />
+          </figure>
+
+          <ol class="axis-list">
+            <li class="proj-item" data-id="p24">
+              <div class="proj-head">
+                <h3 class="proj-title">Manual express de sobrevivencia</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Guía rápida para novatos 2026 con consejos prácticos, datos útiles y orientación inicial.</p>
+            </li>
+            <li class="proj-item" data-id="p25">
+              <div class="proj-head">
+                <h3 class="proj-title">Yo estudio y trabajo</h3>
+                <span class="proj-status pill" hidden>Completado el <time class="completed-at"></time></span>
+              </div>
+              <p class="proj-desc">Catastro de realidades y espacio de acompañamiento con intercambio de materiales y buenas prácticas.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year">2025</span> Campaña AgusCT. Todos los derechos reservados.</small>
+      <a class="btn primary" href="#top">Volver arriba</a>
+    </div>
+  </footer>
+</body>
+</html>

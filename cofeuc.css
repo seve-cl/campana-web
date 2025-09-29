@@ -2,8 +2,14 @@
 
 /* Contenedor de lista */
 .cof-list{
+  display:grid;
   grid-template-columns:repeat(12, 1fr);
   gap:20px;
+
+  /* RESET de OL para que no “empuje” a la izquierda */
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 /* Tarjeta de proyecto/votación */
@@ -16,24 +22,48 @@
   overflow:hidden;
   display:flex;
   flex-direction:column;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.vote-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(2,6,23,.08);
+  border-color:#dfe6f2;
+}
+.vote-card:focus-within{
+  outline:2px solid var(--brand-2);
+  outline-offset:2px;
 }
 
+/* Media */
 .vote-card__media{
   display:block;
   aspect-ratio:16/9;
   background:#f5f7fb;
   border-bottom:1px solid var(--border);
+  overflow:hidden;
 }
 .vote-card__media img{
-  width:100%; height:100%; object-fit:cover; display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition: transform .25s ease;
+}
+.vote-card__media:hover img{
+  transform:scale(1.02);
 }
 
+/* Cuerpo */
 .vote-card__body{
-  padding:14px 16px; display:grid; gap:10px;
+  padding:14px 16px;
+  display:grid;
+  gap:10px;
 }
-
 .vote-card__kicker{
-  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
 }
 
 .badge{
@@ -43,10 +73,13 @@
   color:#fff; background:linear-gradient(90deg, var(--brand), var(--brand-2));
 }
 .badge--ok{
-  background:linear-gradient(90deg, #0fbf7e, #27d39f); /* verde aprobación */
+  background:linear-gradient(90deg, #0fbf7e, #27d39f);
 }
 .badge--warn{
-  background:linear-gradient(90deg, #ff6b6b, #ff8e8e); /* rojo rechazo */
+  background:linear-gradient(90deg, #ff6b6b, #ff8e8e);
+}
+.badge--pending{
+  background:linear-gradient(90deg, #8896aa, #b3bfd1);
 }
 
 .chip{
@@ -64,9 +97,7 @@
 }
 .vote-card__title a:hover{ color:var(--brand-ink); text-decoration:underline; }
 
-.vote-card__desc{
-  margin:0; color:var(--muted);
-}
+.vote-card__desc{ margin:0; color:var(--muted); }
 
 .vote-card__meta{
   display:flex; gap:14px; flex-wrap:wrap; color:var(--muted);
@@ -77,6 +108,33 @@
 @media (max-width:1024px){
   .vote-card{ grid-column:span 6; }
 }
+
 @media (max-width:720px){
-  .vote-card{ grid-column:span 12; }
+  .cof-list{
+    /* 1 sola columna y sin sangría del OL */
+    grid-template-columns: 1fr;
+    gap: 14px;
+    justify-items: center;    /* centra el área del grid */
+  }
+
+  .vote-card{
+    /* anula cualquier span heredado */
+    grid-column: auto !important;
+
+    /* ancho “fluido” y centrado robusto */
+    width: min(520px, 100%);
+    margin-inline: auto;
+    justify-self: center;
+  }
+
+  .vote-card__body{ padding:12px 14px; }
+  .vote-card__title{ font-size:1rem; }
+}
+
+/* Respeta usuarios con movimiento reducido */
+@media (prefers-reduced-motion: reduce){
+  .vote-card,
+  .vote-card__media img{
+    transition:none !important;
+  }
 }
