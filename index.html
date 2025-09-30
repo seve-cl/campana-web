@@ -18,76 +18,58 @@
         <img src="img/logo.png" alt="Logo de la campaña" width="40" height="40" class="brand-logo" />
         <span class="brand-name">AgusCT Derecho</span>
       </a>
-
-      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-        <span class="sr-only">Menú</span>
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </button>
-
-      <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
-        <ul>
-          <li><a href="#propuesta">Propuesta</a></li>
-          <li><a href="#calendario">Calendario</a></li>
-          <li><a href="#candidato">Candidato</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menú</button>
+      <nav id="site-nav" class="site-nav" aria-label="Principal">
+        <a href="#presentacion">Presentación</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="https://noviolenciaydiscriminacion.uc.cl/protocolos-y-lineamientos/">Protocolos</a>
+        <a href="cofeuc.html">Votaciones</a>
+        <a href="#contacto">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <main id="content">
-    <!-- Hero -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <h1 id="hero-title">Construyamos un mejor centro para todas y todos</h1>
-          <p class="lead">Participa, infórmate y súmate a las actividades de campaña.</p>
-          <div class="hero-cta">
-            <a class="btn primary" href="#propuesta">Ver propuesta</a>
-            <a class="btn" href="#calendario">Próximos eventos</a>
-          </div>
+  <!-- Banner principal -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-media" role="img" aria-label="Banner de la campaña con imagen destacada">
+      <img src="img/banner.jpg" alt="Banner principal de la campaña" loading="lazy" />
+    </div>
+    <div class="container hero-content">
+      <h1 id="hero-title">Transparencia y avance medible</h1>
+      <p class="lead">Sigue en tiempo real cómo se cumplen los proyectos de la campaña.</p>
+    </div>
+  </section>
+
+  <main>
+    <!-- Progreso global -->
+    <section id="progreso" class="section" aria-labelledby="progreso-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="progreso-title">Progreso general</h2>
+          <p>Cada proyecto completado suma al porcentaje total.</p>
+        </header>
+        <div class="progress-wrap" role="group" aria-labelledby="progreso-title">
+          <progress id="progress" max="100" value="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</progress>
+          <div id="progress-label" class="progress-label" aria-hidden="true">0%</div>
         </div>
-        <figure class="hero-media">
-          <img src="img/hero.jpg" alt="Imagen de campaña" loading="lazy" />
-        </figure>
+        <p id="progress-summary" class="visually-hidden" aria-live="polite">Progreso total: 0%.</p>
       </div>
     </section>
 
-    <!-- Propuesta -->
-    <section id="propuesta" class="section" aria-labelledby="prop-title">
+    <!-- Presentación (video) -->
+    <section id="presentacion" class="section section-video" aria-labelledby="presentacion-title">
       <div class="container">
         <header class="section-head">
-          <h2 id="prop-title">Propuesta</h2>
-          <p class="section-lead">Ejes, compromisos y plan de trabajo.</p>
+          <h2 id="presentacion-title">Video de presentación</h2>
+          <p>Conoce la campaña en 60 segundos.</p>
         </header>
 
-        <div class="grid grid-3">
-          <article class="card">
-            <h3>Academia</h3>
-            <p>Tutorías, apoyos y acompañamiento para ramos críticos.</p>
-          </article>
-          <article class="card">
-            <h3>Bienestar</h3>
-            <p>Salud mental, deporte y vida universitaria con enfoque integral.</p>
-          </article>
-          <article class="card">
-            <h3>Memoria y democracia</h3>
-            <p>Participación real, transparencia y resguardo de la memoria.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Video -->
-    <section id="video" class="section" aria-labelledby="video-title">
-      <div class="container">
-        <header class="section-head">
-          <h2 id="video-title">Video</h2>
-        </header>
-        <article class="card">
-          <div class="media-16x9">
+        <article class="video-card">
+          <div class="video-embed aspect-16x9">
             <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/gO8N3L_aERg"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -111,8 +93,8 @@
             <h3 class="cal-month" id="cal-month-label">—</h3>
             <div class="cal-nav">
               <button data-cal-prev aria-label="Mes anterior">←</button>
+            
               <button data-cal-next aria-label="Mes siguiente">→</button>
-              <button data-cal-today aria-label="Ir a hoy">Hoy</button>
             </div>
           </div>
 
@@ -132,7 +114,7 @@
       </div>
     </section>
 
-    <!-- Perfil del candidato -->
+    <!-- Perfil del candidato (nuevo bloque bajo calendario) -->
     <section id="candidato" class="section" aria-labelledby="candidato-title">
       <div class="container">
         <header class="section-head">
@@ -141,31 +123,33 @@
 
         <article class="card candidate">
           <figure class="candidate__media">
+            <!-- Reemplaza por tu imagen real -->
             <img src="img/candidato.jpg" alt="Fotografía del candidato" loading="lazy" />
           </figure>
           <div class="candidate__body">
             <h3 class="candidate__headline">Compromiso, claridad y gestión</h3>
             <p class="candidate__lead">
-              Nuestro compromiso es mejorar la experiencia estudiantil con acciones concretas,
-              diálogo permanente y rendición de cuentas.
+              Esta candidatura nace para ordenar, escuchar y ejecutar. Nuestro foco es
+              mejorar la vida universitaria con medidas concretas: bienestar, participación,
+              transparencia y trabajo con resultados visibles.
             </p>
-            <ul class="ticks">
-              <li>Plan de tutorías por ramo crítico</li>
-              <li>Horarios de atención y acompañamiento</li>
-              <li>Participación vinculante en decisiones</li>
+            <ul class="candidate__bullets">
+              <li>Plan de 100 días con hitos medibles y seguimiento público.</li>
+              <li>Espacios seguros y campus activos: salud mental, deporte y cultura.</li>
+              <li>Puentes con escuelas, centros de estudiantes y comunidad UC.</li>
             </ul>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- Galería / Noticias breves -->
-    <section id="galeria" class="section" aria-labelledby="gal-title">
+    <!-- Noticias (antes: Galería) -->
+    <section id="noticias" class="section" aria-labelledby="noticias-title">
       <div class="container">
         <header class="section-head">
-          <h2 id="gal-title">Galería</h2>
+          <h2 id="noticias-title">Noticias</h2>
         </header>
-        <div class="grid grid-4 thumb-grid">
+        <div class="grid gallery">
           <figure class="media aspect-1x1"><img src="img/g01.jpg" alt="Noticia 1" loading="lazy" /></figure>
           <figure class="media aspect-1x1"><img src="img/g02.jpg" alt="Noticia 2" loading="lazy" /></figure>
           <figure class="media aspect-1x1"><img src="img/g03.jpg" alt="Noticia 3" loading="lazy" /></figure>
@@ -181,6 +165,60 @@
         </div>
       </div>
     </section>
+
+    <!-- Acerca -->
+    <section id="acerca" class="section" aria-labelledby="acerca-title">
+      <div class="container narrow">
+        <h2 id="acerca-title">Acerca de la campaña</h2>
+        <p>Buscamos transparencia, participación y resultados medibles. Este sitio concentra el estado de los proyectos, la documentación y el material visual.</p>
+      </div>
+    </section>
+
+    <!-- Contacto y redes -->
+    <section id="contacto" class="section" aria-labelledby="contacto-title">
+      <div class="container narrow">
+        <h2 id="contacto-title">Contacto y redes</h2>
+
+        <article class="ig-card" aria-label="Instagram y contacto de la campaña">
+          <!-- Cabecera IG -->
+          <header class="ig-card__head">
+            <div class="ig-card__brand">
+              <img class="ig-card__icon" src="img/instagram.png" alt="" width="28" height="28">
+              <div class="ig-card__text">
+                <a class="ig-card__handle" href="https://instagram.com/agusct_derecho/" target="_blank" rel="noopener">@agusct_derecho</a>
+              </div>
+            </div>
+          </header>
+
+          <!-- Embeds (uniformes) -->
+          <div class="ig-card__grid" id="ig-feed">
+            <div class="ig-embed ig-card__item">
+              <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/p/DMWGvzavLUI/"
+                data-instgrm-version="14"></blockquote>
+            </div>
+            <div class="ig-embed ig-card__item">
+              <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/p/DFjmoWUg2aQ/"
+                data-instgrm-version="14"></blockquote>
+            </div>
+            <div class="ig-embed ig-card__item">
+              <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/p/DFW5SbJgYKX/"
+                data-instgrm-version="14"></blockquote>
+            </div>
+          </div>
+
+          <!-- Cárgalo una sola vez al final del <body> -->
+          <script async src="//www.instagram.com/embed.js"></script>
+
+          <!-- Línea de contacto -->
+          <footer class="ig-card__foot">
+            <a class="ig-card__mail" href="mailto:agusctderecho@gmail.com">✉ agusctderecho@gmail.com</a>
+          </footer>
+        </article>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
@@ -190,14 +228,5 @@
       <a class="btn primary" href="#top">Volver arriba</a>
     </div>
   </footer>
-
-  <!-- Modal de calendario (nuevo) -->
-  <div class="cal-modal" id="cal-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cal-modal-date">
-    <div class="cal-modal__dialog">
-      <button class="cal-modal__close" id="cal-modal-close" aria-label="Cerrar">✕</button>
-      <h3 class="cal-modal__title"><span id="cal-modal-date">Eventos</span></h3>
-      <ul class="cal-modal__list" id="cal-modal-list"></ul>
-    </div>
-  </div>
 </body>
 </html>
