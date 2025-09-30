@@ -183,36 +183,52 @@ progress::-moz-progress-bar{background:linear-gradient(90deg,var(--brand),var(--
   border-radius:999px; background:linear-gradient(90deg,var(--brand),var(--brand-2)); color:#fff; letter-spacing:.3px;
 }
 
-/* ===== Galería estilo Polaroid (bordes CUADRADOS) ===== */
+/* ===== Galería estilo Polaroid (con marco interno gris) ===== */
 .gallery{
+  --paper: #fff;                 /* color del papel polaroid */
+  --frame: #e6eaf1;              /* gris del marco interior */
+  --ar: 1 / 1;                   /* relación del encuadre (1/1 cuadrado). Cambia a 4/5 si quieres. */
+
   display:grid;
   gap:22px;
   grid-template-columns:repeat(12,1fr);
 }
+
+/* Papel polaroid */
 .gallery > .media{
   position:relative;
-  background:#fff;                      /* papel polaroid */
-  border:1px solid #ebeff6;             /* filo del papel */
-  border-radius:0;                       /* ← esquinas cuadradas */
+  background: var(--paper);
+  border:1px solid #ebeff6;
+  border-radius:0;
   box-shadow:0 12px 28px rgba(2,6,23,.10), 0 2px 6px rgba(2,6,23,.06);
-  padding:14px 14px 34px 14px;          /* base más grande = pie de la polaroid */
+  padding:14px 14px 34px 14px;     /* base inferior más pronunciada */
   overflow:hidden;
   transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
   grid-column:span 3;
 }
+
+/* Foto dentro del marco gris (todo visible y centrado) */
 .gallery > .media img{
-  width:100%; height:100%;
-  aspect-ratio: 4 / 5;                  /* encuadre tipo foto */
-  object-fit:cover;
-  border-radius:0;                       /* ← sin redondeo interior */
   display:block;
+  width:100%;
+  height:auto;                     /* evita deformaciones */
+  aspect-ratio: var(--ar);         /* todas el mismo encuadre */
+  object-fit: contain;             /* NO recorta: se ve todo el contenido */
+  object-position: center;
+
+  /* marco interno gris + relleno gris si la imagen no llena */
+  background: var(--frame);        /* ← antes #fff, ahora gris */
+  border: 8px solid var(--frame);  /* borde gris que delimita la imagen */
+  border-radius:0;
   filter:saturate(1.02);
   transition:transform .25s ease;
 }
-/* “Tilt” sutil */
+
+/* Tilt sutil (opcional) */
 .gallery > .media:nth-child(2n){ transform:rotate(-1.2deg); }
 .gallery > .media:nth-child(3n){ transform:rotate(1.1deg); }
 .gallery > .media:nth-child(5n){ transform:rotate(-0.6deg); }
+
 /* Hover/focus */
 .gallery > .media:hover,
 .gallery > .media:focus-within{
@@ -221,21 +237,22 @@ progress::-moz-progress-bar{background:linear-gradient(90deg,var(--brand),var(--
   border-color:#dfe6f2;
 }
 .gallery > .media:hover img{ transform:scale(1.02); }
-/* “Cinta” decorativa (opcional) */
-.gallery > .media::before{
-  content:"";
-  position:absolute;
-  top:10px; left:50%;
-  transform:translateX(-50%) rotate(-1deg);
-  width:64px; height:18px;
-  background:linear-gradient(180deg,#f7f9ff,#e9eefc);
-  border:1px solid #e2e8f5;
-  border-radius:4px;
-  box-shadow:0 2px 6px rgba(2,6,23,.06);
-  opacity:.85;
+
+.gallery > .media {
+  background: #fff !important;   /* papel blanco */
+  border-radius: 0 !important;   /* esquinas rectas */
 }
-/* Accesibilidad */
-.gallery > .media:focus-within{ outline:2px solid var(--brand-2); outline-offset:2px; }
+
+
+/* Responsive: 2 por fila en móvil, 1 en pantallas muy pequeñas */
+@media (max-width: 720px){
+  .gallery{ grid-template-columns: repeat(2, 1fr); gap:14px; }
+  .gallery > .media{ grid-column:auto; }
+}
+@media (max-width: 380px){
+  .gallery{ grid-template-columns: 1fr; }
+}
+
 
 /* Redes sociales / Contacto (Instagram) */
 .ig-card{
