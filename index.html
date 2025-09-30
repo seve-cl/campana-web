@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Campaña — AgusCT</title>
+  <title>AgusCT Derecho</title>
   <meta name="description" content="Sitio oficial de la campaña de AgusCT." />
   <link rel="icon" href="img/logo.png" />
   <link rel="preload" href="styles.css" as="style" />
@@ -93,7 +93,6 @@
             <h3 class="cal-month" id="cal-month-label">—</h3>
             <div class="cal-nav">
               <button data-cal-prev aria-label="Mes anterior">←</button>
-            
               <button data-cal-next aria-label="Mes siguiente">→</button>
             </div>
           </div>
@@ -113,16 +112,17 @@
         </div>
       </div>
     </section>
-<!-- Modal de calendario -->
-<div class="cal-modal" id="cal-modal" aria-hidden="true">
-  <div class="cal-modal__dialog" role="dialog" aria-modal="true">
-    <button class="cal-modal__close" id="cal-modal-close" aria-label="Cerrar">✕</button>
-    <h3 class="cal-modal__title" id="cal-modal-date">Fecha</h3>
-    <ul class="cal-modal__list" id="cal-modal-list"></ul>
-  </div>
-</div>
 
-    <!-- Perfil del candidato (nuevo bloque bajo calendario) -->
+    <!-- Modal de calendario -->
+    <div class="cal-modal" id="cal-modal" aria-hidden="true">
+      <div class="cal-modal__dialog" role="dialog" aria-modal="true">
+        <button class="cal-modal__close" id="cal-modal-close" aria-label="Cerrar">✕</button>
+        <h3 class="cal-modal__title" id="cal-modal-date">Fecha</h3>
+        <ul class="cal-modal__list" id="cal-modal-list"></ul>
+      </div>
+    </div>
+
+    <!-- Perfil del candidato -->
     <section id="candidato" class="section" aria-labelledby="candidato-title">
       <div class="container">
         <header class="section-head">
@@ -131,7 +131,6 @@
 
         <article class="card candidate">
           <figure class="candidate__media">
-            <!-- Reemplaza por tu imagen real -->
             <img src="img/candidato.jpg" alt="Fotografía del candidato" loading="lazy" />
           </figure>
           <div class="candidate__body">
@@ -151,7 +150,7 @@
       </div>
     </section>
 
-    <!-- Noticias (antes: Galería) -->
+    <!-- Noticias -->
     <section id="noticias" class="section" aria-labelledby="noticias-title">
       <div class="container">
         <header class="section-head">
@@ -174,14 +173,6 @@
       </div>
     </section>
 
-    <!-- Acerca -->
-    <section id="acerca" class="section" aria-labelledby="acerca-title">
-      <div class="container narrow">
-        <h2 id="acerca-title">Acerca de la campaña</h2>
-        <p>Buscamos transparencia, participación y resultados medibles. Este sitio concentra el estado de los proyectos, la documentación y el material visual.</p>
-      </div>
-    </section>
-
     <!-- Contacto y redes -->
     <section id="contacto" class="section" aria-labelledby="contacto-title">
       <div class="container narrow">
@@ -198,26 +189,10 @@
             </div>
           </header>
 
-          <!-- Embeds (uniformes) -->
-          <div class="ig-card__grid" id="ig-feed">
-            <div class="ig-embed ig-card__item">
-              <blockquote class="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/p/DMWGvzavLUI/"
-                data-instgrm-version="14"></blockquote>
-            </div>
-            <div class="ig-embed ig-card__item">
-              <blockquote class="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/p/DFjmoWUg2aQ/"
-                data-instgrm-version="14"></blockquote>
-            </div>
-            <div class="ig-embed ig-card__item">
-              <blockquote class="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/p/DFW5SbJgYKX/"
-                data-instgrm-version="14"></blockquote>
-            </div>
-          </div>
+          <!-- Feed dinámico: se llena con app.js -> initInstagramFeed() -->
+          <div class="ig-card__grid" id="ig-feed" aria-live="polite"></div>
 
-          <!-- Cárgalo una sola vez al final del <body> -->
+          <!-- Carga única del script de Instagram (el JS también lo inyecta si no está disponible) -->
           <script async src="//www.instagram.com/embed.js"></script>
 
           <!-- Línea de contacto -->
