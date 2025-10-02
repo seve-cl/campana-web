@@ -3,22 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>AgusCT Derecho</title>
-  <meta name="description" content="Sitio oficial de la campaña de AgusCT." />
-  <link rel="icon" href="img/logo.png" />
-  <link rel="preload" href="styles.css" as="style" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Sitio oficial de la campaña de AgusCT.">
+
+  <link rel="icon" href="https://agusct.cl/img/logo.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="https://agusct.cl/img/logo.png" sizes="180x180">
+  <link rel="shortcut icon" href="https://agusct.cl/favicon.ico" type="image/x-icon">
+
+  <link rel="canonical" href="https://agusct.cl/">
+
+  <meta property="og:title" content="AgusCT Derecho — Sitio oficial">
+  <meta property="og:description" content="Conoce el programa y los proyectos de AgusCT en Derecho UC.">
+  <meta property="og:url" content="https://agusct.cl/">
+  <meta property="og:image" content="https://agusct.cl/img/logo.png">
+
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
 <body>
-  <!-- Header fijo con logo y navegación -->
+
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Inicio">
-        <img src="img/logo.png" alt="Logo de la campaña" width="40" height="40" class="brand-logo" />
+        <img src="img/logo.png" alt="Logo de la campaña" width="40" height="40" class="brand-logo">
         <span class="brand-name">AgusCT Derecho</span>
       </a>
+
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menú</button>
+
       <nav id="site-nav" class="site-nav" aria-label="Principal">
         <a href="#presentacion">Presentación</a>
         <a href="proyectos.html">Proyectos</a>
@@ -29,59 +43,68 @@
     </div>
   </header>
 
-  <!-- Banner principal -->
   <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-media" role="img" aria-label="Banner de la campaña con imagen destacada">
-      <img src="img/banner.jpg" alt="Banner principal de la campaña" loading="lazy" />
+    <div class="hero-media">
+      <img src="img/banner.webp" alt="Banner principal de la campaña" loading="lazy">
     </div>
+
     <div class="container hero-content">
       <h1 id="hero-title">Transparencia y avance medible</h1>
-      <p class="lead">Sigue en tiempo real cómo se cumplen los proyectos de la campaña.</p>
+      <p class="lead">Explora cada eje y conoce las propuestas que impulsamos para nuestra facultad.</p>
+      <p class="hero-cta"><a class="btn primary" href="proyectos.html">Proyectos</a></p>
     </div>
   </section>
 
   <main>
-    <!-- Progreso global -->
+
     <section id="progreso" class="section" aria-labelledby="progreso-title">
       <div class="container">
         <header class="section-head">
           <h2 id="progreso-title">Progreso general</h2>
           <p>Cada proyecto completado suma al porcentaje total.</p>
         </header>
-        <div class="progress-wrap" role="group" aria-labelledby="progreso-title">
+
+        <div class="progress-wrap">
           <progress id="progress" max="100" value="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</progress>
           <div id="progress-label" class="progress-label" aria-hidden="true">0%</div>
         </div>
+
         <p id="progress-summary" class="visually-hidden" aria-live="polite">Progreso total: 0%.</p>
       </div>
     </section>
 
-    <!-- Presentación (video) -->
     <section id="presentacion" class="section section-video" aria-labelledby="presentacion-title">
       <div class="container">
         <header class="section-head">
           <h2 id="presentacion-title">Video de presentación</h2>
-          <p>Conoce la campaña en 60 segundos.</p>
         </header>
 
         <article class="video-card">
-          <div class="video-embed aspect-16x9">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/gO8N3L_aERg"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen>
-            </iframe>
-          </div>
+          <a class="yt-fake-embed"
+             href="https://www.youtube.com/watch?v=YX6Gp8qZAPo"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Reproducir video de presentación en YouTube">
+
+            <img class="yt-thumb"
+                 src="https://img.youtube.com/vi/YX6Gp8qZAPo/hqdefault.jpg"
+                 alt="Miniatura del video de presentación"
+                 loading="lazy">
+
+            <span class="yt-play" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="68" height="48" viewBox="0 0 68 48">
+                <path d="M66.52,7.77a8,8,0,0,0-5.63-5.66C56.65,1.09,34,1.09,34,1.09s-22.65,0-26.89,1a8,8,0,0,0-5.63,5.66A83.14,83.14,0,0,0,1,24a83.14,83.14,0,0,0,.52,16.23,8,8,0,0,0,5.63,5.66c4.24,1,26.89,1,26.89,1s22.65,0,26.89-1a8,8,0,0,0,5.63-5.66A83.14,83.14,0,0,0,67,24,83.14,83.14,0,0,0,66.52,7.77Z"/>
+                <polygon points="45 24 27 14 27 34 45 24" fill="#fff"/>
+              </svg>
+            </span>
+          </a>
+
+          <noscript>
+            <p><a href="https://www.youtube.com/watch?v=YX6Gp8qZAPo" target="_blank" rel="noopener">Ver video en YouTube</a></p>
+          </noscript>
         </article>
       </div>
     </section>
 
-    <!-- Calendario -->
     <section id="calendario" class="section" aria-labelledby="cal-title">
       <div class="container">
         <header class="section-head">
@@ -113,7 +136,6 @@
       </div>
     </section>
 
-    <!-- Modal de calendario -->
     <div class="cal-modal" id="cal-modal" aria-hidden="true">
       <div class="cal-modal__dialog" role="dialog" aria-modal="true">
         <button class="cal-modal__close" id="cal-modal-close" aria-label="Cerrar">✕</button>
@@ -122,7 +144,6 @@
       </div>
     </div>
 
-    <!-- Perfil del candidato -->
     <section id="candidato" class="section" aria-labelledby="candidato-title">
       <div class="container">
         <header class="section-head">
@@ -131,8 +152,9 @@
 
         <article class="card candidate">
           <figure class="candidate__media">
-            <img src="img/candidato.jpg" alt="Fotografía del candidato" loading="lazy" />
+            <img src="img/candidato.webp" alt="Fotografía del candidato" loading="lazy">
           </figure>
+
           <div class="candidate__body">
             <h3 class="candidate__headline">Compromiso, claridad y gestión</h3>
             <p class="candidate__lead">
@@ -150,36 +172,34 @@
       </div>
     </section>
 
-    <!-- Noticias -->
     <section id="noticias" class="section" aria-labelledby="noticias-title">
       <div class="container">
         <header class="section-head">
-          <h2 id="noticias-title">Noticias</h2>
+          <h2 id="noticias-title">Galería</h2>
         </header>
+
         <div class="grid gallery">
-          <figure class="media aspect-1x1"><img src="img/g01.jpg" alt="Noticia 1" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g02.jpg" alt="Noticia 2" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g03.jpg" alt="Noticia 3" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g04.jpg" alt="Noticia 4" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g05.jpg" alt="Noticia 5" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g06.jpg" alt="Noticia 6" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g07.jpg" alt="Noticia 7" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g08.jpg" alt="Noticia 8" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g09.jpg" alt="Noticia 9" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g10.jpg" alt="Noticia 10" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g11.jpg" alt="Noticia 11" loading="lazy" /></figure>
-          <figure class="media aspect-1x1"><img src="img/g12.jpg" alt="Noticia 12" loading="lazy" /></figure>
+          <figure class="media aspect-1x1"><img src="img/g01.webp" alt="Noticia 1" loading="lazy"></figure>
+          <figure class="media aspect-1x1"><img src="img/g02.webp" alt="Noticia 2" loading="lazy"></figure>
+          <figure class="media aspect-1x1"><img src="img/g03.webp" alt="Noticia 3" loading="lazy"></figure>
+          <figure class="media aspect-1x1"><img src="img/g04.webp" alt="Noticia 4" loading="lazy"></figure>
+          <figure class="media aspect-1x1"><img src="img/g05.webp" alt="Noticia 5" loading="lazy"></figure>
+          <figure class="media aspect-1x1"><img src="img/g06.webp" alt="Noticia 6" loading="lazy"></figure>
+          <figure class="media aspect-1x1"><img src="img/g07.webp" alt="Noticia 7" loading="lazy"></figure>
+          <figure class="media aspect-1x1"><img src="img/g08.webp" alt="Noticia 8" loading="lazy"></figure>
+          <figure class="media aspect-1x1"><img src="img/g09.webp" alt="Noticia 9" loading="lazy"></figure>
+          <figure class="media aspect-1x1"><img src="img/g10.webp" alt="Noticia 10" loading="lazy"></figure>
+          <figure class="media aspect-1x1"><img src="img/g11.webp" alt="Noticia 11" loading="lazy"></figure>
+          <figure class="media aspect-1x1"><img src="img/g12.webp" alt="Noticia 12" loading="lazy"></figure>
         </div>
       </div>
     </section>
 
-    <!-- Contacto y redes -->
     <section id="contacto" class="section" aria-labelledby="contacto-title">
       <div class="container narrow">
         <h2 id="contacto-title">Contacto y redes</h2>
 
         <article class="ig-card" aria-label="Instagram y contacto de la campaña">
-          <!-- Cabecera IG -->
           <header class="ig-card__head">
             <div class="ig-card__brand">
               <img class="ig-card__icon" src="img/instagram.png" alt="" width="28" height="28">
@@ -189,26 +209,24 @@
             </div>
           </header>
 
-          <!-- Feed dinámico: se llena con app.js -> initInstagramFeed() -->
           <div class="ig-card__grid" id="ig-feed" aria-live="polite"></div>
 
-          <!-- Carga única del script de Instagram (el JS también lo inyecta si no está disponible) -->
           <script async src="//www.instagram.com/embed.js"></script>
 
-          <!-- Línea de contacto -->
           <footer class="ig-card__foot">
             <a class="ig-card__mail" href="mailto:agusctderecho@gmail.com">✉ agusctderecho@gmail.com</a>
           </footer>
         </article>
       </div>
     </section>
+
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <small>© <span id="year">2025</span> AgusCT Derecho. Todos los derechos reservados.</small>
     </div>
   </footer>
+
 </body>
 </html>

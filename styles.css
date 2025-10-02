@@ -1,7 +1,7 @@
 /* Estilo claro + azul moderno, responsive y accesible */
 :root{
   --bg:#ffffff; --text:#0b1220; --muted:#677087; --border:#e7eaf0;
-  --brand:#0a7bff; --brand-2:#46b6ff; --brand-ink:#0453b3; --ok:#10b981;
+  --brand:#E04C64; --brand-2:#FF438B; --brand-ink:#0453b3; --ok:#10b981;
   --max:1200px; --radius:16px; --shadow:0 8px 26px rgba(2,6,23,.06);
   --cal-day-h:112px; /* alto de fila del calendario en desktop/tablet */
 }
@@ -41,6 +41,7 @@ img{max-width:100%; height:auto; display:block}
 @media (min-width: 721px){
   .nav-toggle{ display:none !important; }
   .site-nav{ display:flex; gap:18px; margin-inline:auto; }
+  
 }
 
 /* Hero / banner */
@@ -48,6 +49,26 @@ img{max-width:100%; height:auto; display:block}
 .hero-media img{width:100%; height:clamp(220px, 40vw, 420px); object-fit:cover}
 .hero-content{position:relative; margin-top:-48px; background:#fff; border:1px solid var(--border); box-shadow:var(--shadow); border-radius:18px; padding:22px}
 .lead{color:var(--muted)}
+/* Hero CTA: botón igual al de Programa */
+.hero-cta{
+  display:flex;
+  justify-content:flex-end;   /* tira el botón a la derecha */
+  margin-top:12px;
+}
+
+.hero-cta .btn.primary{
+  background: linear-gradient(90deg, #E04C64, #FF438B);
+  border:none;
+  border-radius:999px;
+  padding:.65rem 1rem;        /* mismo grosor que Programa */
+  line-height:1;
+  font-size:.95rem;
+  min-width:220px;            /* opcional: fuerza mismo ancho mínimo */
+  justify-content:center;
+  box-shadow:0 6px 18px rgba(255, 67, 139, .22);
+}
+
+
 
 /* Botones */
 .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.7rem 1rem; border-radius:999px; text-decoration:none; font-weight:700; border:1px solid transparent}
@@ -127,6 +148,75 @@ progress::-webkit-progress-bar{background:#eef2f7; border-radius:999px}
 progress::-webkit-progress-value{background:linear-gradient(90deg,var(--brand),var(--brand-2)); border-radius:999px}
 progress::-moz-progress-bar{background:linear-gradient(90deg,var(--brand),var(--brand-2)); border-radius:999px}
 .progress-label{font-weight:800; letter-spacing:.3px}
+/* ==== Fake embed de YouTube (presentación) ==== */
+.yt-fake-embed{
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius, 12px);
+  overflow: hidden;
+  box-shadow: var(--shadow, 0 10px 30px rgba(0,0,0,.12));
+  background: #0b0f19; /* fondo por si demora la miniatura */
+  transition: transform .16s ease, box-shadow .16s ease;
+  outline: none;
+}
+.yt-fake-embed:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 34px rgba(0,0,0,.16);
+}
+.yt-fake-embed:focus-visible{
+  box-shadow:
+    0 0 0 3px rgba(10,123,255,.18),
+    0 10px 30px rgba(0,0,0,.12);
+}
+
+/* Miniatura */
+.yt-thumb{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.05) contrast(1.02);
+  transition: filter .2s ease, transform .2s ease;
+}
+
+/* Botón play centrado */
+.yt-play{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none; /* el clic lo recibe el <a> */
+}
+.yt-play svg{
+  display: block;
+  width: 68px;
+  height: 48px;
+  opacity: .92;
+  transition: transform .18s ease, opacity .18s ease, filter .18s ease;
+  /* cuerpo del "player" */
+  /* El rectángulo oscuro del SVG toma fill por defecto (negro); lo suavizamos: */
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
+}
+.yt-fake-embed:hover .yt-thumb{ transform: scale(1.01); }
+.yt-fake-embed:hover .yt-play svg{ transform: scale(1.06); opacity: 1; }
+
+/* Alto contraste en temas claros/oscursos */
+@media (prefers-color-scheme: light){
+  .yt-fake-embed{ background: #e7eaf0; }
+}
+@media (prefers-color-scheme: dark){
+  .yt-fake-embed{ background: #0b0f19; }
+}
+
+/* Integración con tu tarjeta */
+.section-video .video-card{
+  /* Si ya tienes estilos para .video-card, esto solo afina separación */
+  margin-inline: auto;
+  max-width: 900px; /* mantén el mismo ancho que usabas con el iframe */
+}
 
 /* ===== Candidato ===== */
 .candidate{
@@ -169,6 +259,11 @@ progress::-moz-progress-bar{background:linear-gradient(90deg,var(--brand),var(--
   .candidate__headline{ font-size:1.1rem; }
   .candidate__lead{ font-size:.95rem; }
   .candidate__bullets li{ padding:6px 10px; }
+  .hero-cta{
+  display:flex;
+  justify-content:flex-start;   
+  margin-top:12px;
+}
 }
 
 /* Cards de proyectos (si se reutilizan en otras páginas) */
@@ -394,34 +489,38 @@ progress::-moz-progress-bar{background:linear-gradient(90deg,var(--brand),var(--
   z-index: 0;
 }
 @media (max-width: 720px){
-  /* 2 por fila, mismo look que desktop */
+  /* 2 por fila, más grandes y centradas */
   .gallery{
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    gap: 8px;                /* menos espacio para que crezcan */
+    justify-items: center;   /* centra cada item dentro de la celda */
   }
 
   .gallery > .media{
     grid-column: auto;
-    width: auto;
+    width: 95%;              /* un poco más anchas pero sin salirse */
+    max-width: 260px;        /* tope opcional para que no queden gigantes en tablets pequeñas */
     border-radius: 0;
-    /* base más alta para el look polaroid, NO la achiques */
-    padding: 12px 12px 34px 12px;  /* antes 26px te cortaba el “papel” */
-    background:#fff !important;    /* sin fondo gris detrás */
+    padding: 12px 12px 34px 12px; 
+    background:#fff !important;
+    justify-self: center;    /* asegura el centrado en la celda */
   }
 
-  /* Mantener el MISMO encuadre y marco en móvil (no cover) */
   .gallery > .media img{
     display:block;
     width:100%;
     height:auto;
-    aspect-ratio: var(--ar);       /* usa el mismo --ar definido arriba */
-    object-fit: contain;           /* NO recorta */
+    aspect-ratio: var(--ar);
+    object-fit: contain;
     object-position: center;
-    background: var(--frame);      /* relleno gris */
+    background: var(--frame);
     border: 8px solid var(--frame);
     border-radius: 0;
   }
+}
+
+
 
   /* Por si la “cinta” seguía apareciendo en móvil */
   .gallery > .media::before{ content:none !important; }
-}
+

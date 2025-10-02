@@ -164,6 +164,26 @@
   
 }
 .section .btn.primary:hover{ filter: brightness(.95); }
+/* Botón primario genérico (útil también fuera de .section) */
+.btn.primary{
+  background: linear-gradient(90deg, #E04C64, #FF438B);
+  color:#fff;
+  border:none;
+  border-radius:999px;
+  padding:.65rem 1rem;
+  line-height:1;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  
+}
+.btn.primary:hover{ filter: brightness(.95); }
+
+/* Separación del botón dentro del hero */
+.hero .hero-cta{ margin-top:10px;
+  display:flex;
+  justify-content:flex-end;   
+  margin-top:12px; }
 
 /* Responsive */
 @media (max-width: 900px){
@@ -261,3 +281,34 @@
   .pdf-card{ border-radius:14px; max-width: 96vw; } /* móvil: respeta márgenes laterales */
 }
 
+/* === Estilo global de todos los .btn.primary === */
+.btn.primary,
+a.btn.primary {
+  background: linear-gradient(90deg, #E04C64, #FF438B);
+  color: #fff;                  /* color del texto */
+  border: none;
+  border-radius: 999px;
+  padding: .65rem 1rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;        /* por si es <a> */
+  box-shadow: 0 6px 18px rgba(255, 67, 139, .22);
+  transition: filter .15s ease, transform .06s ease, box-shadow .15s ease;
+}
+
+.btn.primary:hover { filter: brightness(.95); }
+.btn.primary:active { transform: translateY(1px); }
+.btn.primary:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(255, 67, 139, .2),
+    0 6px 18px rgba(255, 67, 139, .22);
+}
+
+.btn.primary[disabled],
+.btn.primary.is-disabled {
+  opacity: .6;
+  pointer-events: none;
+}
